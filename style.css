@@ -2,7 +2,7 @@ body {
   padding-top: 6.5rem;
   background: #6A707C; }
 
-.header, .content, .sidebar, .footer {
+.content, .sidebar, .footer {
   color: aliceblue; }
 
 .header {
@@ -43,9 +43,6 @@ body {
 .logo {
   color: aliceblue; }
 
-.red {
-  background: red; }
-
 .navbar {
   padding: .6rem 2rem;
   background: #40444b; }
@@ -66,7 +63,7 @@ body {
   transition: width 300ms cubic-bezier(0.07, 0.42, 0.63, 1.08);
   overflow: hidden; }
   .searchBar-Input {
-    flex-grow: 1;
+    flex-grow: 0.6;
     background: transparent;
     padding: 0 0.5em;
     border: 0;
@@ -77,11 +74,11 @@ body {
     opacity: 0;
     cursor: pointer; }
   .searchBar:focus-within {
-    width: 100%; }
+    width: 30%; }
     .searchBar:focus-within .searchBar-Input {
       opacity: 1;
       cursor: inherit;
-      width: calc(100% - var(--size)); }
+      width: calc(80% - var(--size)); }
   .searchBar-Btn {
     background: transparent;
     border-radius: 50%;
