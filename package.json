@@ -1,14 +1,18 @@
 {
-  "name": "bootstrap",
+  "name": "bootstrap-shop",
   "version": "1.0.0",
   "description": "",
   "main": "script.js",
   "scripts": {
     "compile:sass": "node-sass style.scss style.css"
   },
-  "author": "",
+  "author": "Kacper Kwietniewski",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^4.5.3",
     "node-sass": "^5.0.0"
+  },
+  "devDependencies": {
+    "prettier": "2.2.1"
   }
 }
