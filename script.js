@@ -1,14 +1,15 @@
-// let navbar = document.querySelector(".navbar");
+let navbarBrand = document.querySelector(".navbar-brand img");
 // let searchInput = document.querySelector(".searchInput");
 let comeToTop = document.querySelector(".comeToTop");
 
 //Top scroll button
 window.addEventListener("scroll", () => {
-  //   cconsole.log(window.scrollY);
   if (window.scrollY > 75) {
     comeToTop.style.display = "block";
+    navbarBrand.style.height = "50px";
   } else {
     comeToTop.style.display = "none";
+    navbarBrand.style.height = "";
   }
 });
 comeToTop.addEventListener("click", () => {

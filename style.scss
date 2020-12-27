@@ -1,14 +1,19 @@
 :root {
-  --back-color: #6a707c;
   --content-color: #76797e;
   --text-color: #f0f8ff;
   --hover-color: #e9d5bd;
   --navbar-color: #40444b;
 }
+@import "./node_modules/bootstrap/scss/functions.scss";
+@import "./node_modules/bootstrap/scss/variables.scss";
+
+$body-bg: #6a707c;
+$link-color: var(--text-color);
+$link-hover-color: var(--hover-color);
+$link-hover-decoration: none;
 
 $theme-colors: (
   primary: #a08954,
-  bg-color: #6a707c,
 );
 
 @import "./node_modules/bootstrap/scss/bootstrap.scss";
@@ -18,7 +23,6 @@ $theme-colors: (
   height: 26px;
 }
 body {
-  background: var(--back-color);
   position: relative;
 }
 .dropdown-toggle::after {
@@ -26,13 +30,24 @@ body {
 }
 .content,
 .sidebar,
-.footer {
+.footer,
+a {
   color: var(--text-color);
 }
 .content {
   padding-top: 9.5rem;
+  padding-bottom: 5rem;
   min-height: 700px;
   height: 70%;
+}
+.btn-group {
+  padding-bottom: 1rem;
+}
+.btn-check:checked + .btn-outline-primary {
+  border: none;
+  box-shadow: none;
+  color: var(--text-color);
+  background: #a08954;
 }
 .main-content {
   background: var(--content-color);
@@ -43,9 +58,8 @@ body {
   min-height: 700px;
 }
 .footer {
-  background: #81858f;
   height: 10%;
-  width: auto;
+  // width: auto;
   min-height: 100px;
 }
 .card {
