@@ -4,15 +4,18 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "compile:sass": "node-sass style.scss style.css"
+    "compile:sass": "node-sass --include-path scss scss/style.scss style/style.css",
+    "watch:sass": "nodemon -e scss -x \"npm run compile:sass\"",
+    "dev": "nodemon ./index.php localhost:80"
   },
   "author": "Kacper Kwietniewski",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.5.3",
-    "node-sass": "^5.0.0"
+    "bootstrap": "^4.5.3"
   },
   "devDependencies": {
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.6",
     "prettier": "2.2.1"
   }
 }
