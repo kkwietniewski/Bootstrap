@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration</title>
-    <link rel="stylesheet" href="../style/register.css" />
+    <link rel="stylesheet" href="../style/style.css" />
   </head>
   <body>
+  <?php
+    require_once "../scripts/getNavbar.php";
+  ?>
     <div class="wrapper fadInDown">
       <div id="formContent">
         <form action="" method="post">
@@ -61,5 +64,6 @@
         </div>
       </div>
     </div>
+    <script src="../scripts/script.js"></script>
   </body>
 </html>
