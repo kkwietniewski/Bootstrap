@@ -6,3 +6,4 @@ if (!$conn)
     echo "Polaczono:)";
 }
 ?>
+
