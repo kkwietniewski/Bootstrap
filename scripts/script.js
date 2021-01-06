@@ -22,10 +22,10 @@ document.body.appendChild(comeToTop);
 window.addEventListener("scroll", () => {
   if (window.scrollY > 75) {
     comeToTop.style.display = "block";
-    navbarBrand.style.height = "50px";
+    navbarBrand.src = "../images/logomin50x50.png";
   } else {
     comeToTop.style.display = "none";
-    navbarBrand.style.height = "";
+    navbarBrand.src = "../images/logo200x76.png";
   }
 });
 

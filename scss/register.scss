@@ -1,5 +1,10 @@
+body {
+  height: 100%;
+}
 .underlineHover {
+  display: block;
   color: var(--content-color) !important;
+  height: 100%;
 }
 
 .wrapper {
@@ -25,16 +30,12 @@
 #formFooter {
   background-color: #f6f6f6;
   border-top: 1px solid #dce8f1;
-  padding: 25px;
   text-align: center;
   -webkit-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;
 }
 
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-button[type="submit"] {
+.regBtn {
   background-color: #a08954;
   border: none;
   color: white;
@@ -46,30 +47,20 @@ button[type="submit"] {
   font-size: 13px;
   box-shadow: 0 10px 30px 0 rgba(107, 116, 121, 0.4);
   border-radius: 5px 5px 5px 5px;
-  margin: 5px 20px 40px 20px;
+  margin: 25px 20px 40px 20px;
   transition: all 0.3s ease-in-out;
 }
 
-input[type="button"]:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-button[type="submit"]:hover {
+.regBtn:hover {
   background-color: #8a7649;
   cursor: pointer;
 }
 
-input[type="button"]:active,
-input[type="submit"]:active,
-input[type="reset"]:active {
-  -moz-transform: scale(0.95);
-  -webkit-transform: scale(0.95);
-  -o-transform: scale(0.95);
-  -ms-transform: scale(0.95);
+.regBtn:active {
   transform: scale(0.95);
 }
 
-input[type="text"],
-input[type="password"] {
+.regInp {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
@@ -81,25 +72,14 @@ input[type="password"] {
   margin: 5px;
   width: 85%;
   border: 2px solid #f6f6f6;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus {
+.regInp:focus {
   background-color: #fff;
   border-bottom: 2px solid #a08954;
   text-align: left;
-}
-
-input[type="text"]:placeholder,
-input[type="password"]:placeholder {
-  color: #cccccc;
 }
 
 .fadeInDown {
@@ -137,7 +117,6 @@ input[type="password"]:placeholder {
   }
 }
 
-/* Simple CSS3 Fade-in Animation */
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
@@ -170,33 +149,34 @@ input[type="password"]:placeholder {
 
   animation-fill-mode: forwards;
 
-  animation-duration: 1s;
+  animation-duration: 0.6s;
 }
-img {
+.fadeIn > img {
   padding: 1.75rem;
+  width: 40%;
 }
 .fadeIn.first {
-  animation-delay: 0.2s;
+  animation-delay: 0.1s;
 }
 
 .fadeIn.second {
-  animation-delay: 0.4s;
+  animation-delay: 0.2s;
 }
 
 .fadeIn.third {
-  animation-delay: 0.6s;
+  animation-delay: 0.3s;
 }
 
 .fadeIn.fourth {
-  animation-delay: 0.8s;
+  animation-delay: 0.4s;
 }
 
 .fadeIn.fifth {
-  animation-delay: 1s;
+  animation-delay: 0.5s;
 }
 
 .fadeIn.sixth {
-  animation-delay: 1.4s;
+  animation-delay: 0.6s;
 }
 
 .underlineHover:after {

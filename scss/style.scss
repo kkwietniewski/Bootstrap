@@ -17,7 +17,7 @@ $theme-colors: (
 );
 
 @import "./node_modules/bootstrap/scss/bootstrap.scss";
-// @import "./register.scss";
+@import "./register.scss";
 
 .menuIcon {
   width: 26px;

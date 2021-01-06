@@ -14,17 +14,17 @@
       <div id="formContent">
         <form action="" method="post">
           <div class="fadeIn first">
-            <img src="../images/logo200x76.png" alt="Computer Shop" />
+            <img src="../images/logomin200x200.png" alt="Computer Shop" />
           </div>
           <div class="fadeIn second">
             <?php
             require_once "../scripts/register.php";
             ?>
-            <input type="text" name="login" placeholder="Podaj login" />
+            <input class="regInp" type="text" name="login" placeholder="Podaj login" />
           </div>
           <div>
             <input
-              class="fadeIn third"
+              class="regInp fadeIn third"
               type="text"
               placeholder="Podaj email"
               name="email"
@@ -32,7 +32,7 @@
           </div>
           <div>
             <input
-              class="fadeIn fourth"
+              class="regInp fadeIn fourth"
               type="password"
               placeholder="Podaj hasło"
               name="pass"
@@ -40,24 +40,24 @@
           </div>
           <div>
             <input
-              class="fadeIn fifth"
+              class="regInp fadeIn fifth"
               type="password"
               placeholder="Powtórz hasło"
               name="validPass"
             />
           </div>
-          <button type="submit" class="fadeIn sixth" name="register">
+          <button type="submit" class="regBtn fadeIn sixth" name="register">
             Zarejestruj się
           </button>
         </form>
         <div id="formFooter">
           <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="col-sm-12 col-md-6 col-lg-6 p-4">
               <a class="underlineHover" href="./odzyskajHaslo.php"
                 >Odzyskaj hasło</a
               >
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="col-sm-12 col-md-6 col-lg-6 p-4">
               <a class="underlineHover" href="./logowanie.php">Zaloguj sie</a>
             </div>
           </div>
