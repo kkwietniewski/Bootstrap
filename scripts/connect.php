@@ -1,4 +1,5 @@
 <?php
-$conn= new mysqli('localhost', 'root', '', 'aplikacje_projekt');
+$conn= new mysqli('db', 'root', 'password123', 'paiproject');
 $conn->query("SET NAMES 'utf8'"); 
+
 ?>
