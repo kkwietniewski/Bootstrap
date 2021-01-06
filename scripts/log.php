@@ -35,7 +35,7 @@
             }
             else 
             {   
-                $_SESSION['blad'] = 'Taki użytkownik nie istnieje';
+                $_SESSION['error'] = 'Taki użytkownik nie istnieje';
                 header('Location: ../pages/login.php'); 
             }
 
@@ -43,7 +43,7 @@
         }
         else 
         {
-            $_SESSION['blad'] = 'Taki użytkownik nie istnieje';
+            $_SESSION['error'] = 'Taki użytkownik nie istnieje';
             header('Location: ../pages/login.php');
         }
 

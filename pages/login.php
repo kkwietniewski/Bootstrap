@@ -11,11 +11,11 @@
 <body>
 <?php
 
-    if (isset($_SESSION['blad']))
+    if (isset($_SESSION['error']))
     {
-        echo $_SESSION['blad']; 
+        echo $_SESSION['error']; 
     }
-    unset($_SESSION['blad']);
+    unset($_SESSION['error']);
 ?>
     <form action="../scripts/log.php" method="post">
         <div>
