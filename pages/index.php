@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bootstrap-page</title>
+    <title>Computer Shop - 23648 23621</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../style/style.css" />
+    <link rel="icon" sizes="16x16" type="image/png" href="../images/favicon-16x16.png" />
   </head>
   <body>
     <?php

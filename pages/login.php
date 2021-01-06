@@ -1,40 +1,60 @@
 <?php
-    session_start(); 
+    session_start();
+    require_once "../scripts/getNavbar.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="icon" sizes="16x16" type="image/png" href="../images/favicon-16x16.png" />
 </head>
 <body>
-<?php
-
-    if (isset($_SESSION['error']))
-    {
-        echo $_SESSION['error']; 
-    }
-    unset($_SESSION['error']);
-?>
-    <form action="../scripts/log.php" method="post">
-        <div>
-            <div>
-                Login
+    <div class="wrapper fadInDown">
+      <div id="formContent">
+        <form action="../scripts/log.php" method="post">
+          <div class="fadeIn first">
+            <img src="../images/logomin200x200.png" alt="Computer Shop" />
+          </div>
+          <div class="fadeIn second">
+            <?php
+           if (isset($_SESSION['error']))
+            {
+                echo $_SESSION['error']; 
+            }
+            unset($_SESSION['error']);
+            ?>
+            <input class="regInp" type="text" name="login" placeholder="Podaj login" />
+          </div>
+          <div>
+            <input
+              class="regInp fadeIn fourth"
+              type="password"
+              placeholder="Podaj hasło"
+              name="pass"
+            />
+          </div>
+          <div>
+          <button type="submit" class="regBtn fadeIn sixth" name="register">
+            Zaloguj się
+          </button>
+        </form>
+        <div id="formFooter">
+          <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6 p-4">
+              <a class="underlineHover" href="./odzyskajHaslo.php"
+                >Odzyskaj hasło</a
+              >
             </div>
-            <input type="text" class="form-control" name="login">
-        </div>  
-          
-        <div>
-            <div>
-                Hasło
+            <div class="col-sm-12 col-md-6 col-lg-6 p-4">
+              <a class="underlineHover" href="./registration.php">Zarejestuj się</a>
             </div>
-            <input type="password" name="pass">
+          </div>
         </div>
-
-        <div>
-            <button type="submit">Zaloguj się </button>
-        </div>
-    </form>
+      </div>
+    </div>
+    <script src="../scripts/script.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
   session_start();
-  require_once "../scripts/getNavbar.php";
+    require_once "../scripts/getNavbar.php";
     require_once "../scripts/register.php";
     if (isset($_SESSION['logged']))
     {
@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration</title>
     <link rel="stylesheet" href="../style/style.css" />
+    <link rel="icon" sizes="16x16" type="image/png" href="../images/favicon-16x16.png" />
   </head>
   <body>
     <div class="wrapper fadInDown">
