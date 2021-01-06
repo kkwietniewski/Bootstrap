@@ -23,6 +23,7 @@
                 $dbPass = $line['password']; 
                 if ($login == $dbLogin && $pass == $dbPass)
                 {
+                    $_SESSION['logged'] = true;
                     $conn->close();
                     header('Location: ../pages/index.php'); 
                 }

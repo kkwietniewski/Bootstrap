@@ -1,3 +1,13 @@
+<?php
+  session_start();
+  require_once "../scripts/getNavbar.php";
+    require_once "../scripts/register.php";
+    if (isset($_SESSION['logged']))
+    {
+      header ('Location: ./index.php') ;
+    }
+    unset($_SESSION['logged']); 
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,9 +17,6 @@
     <link rel="stylesheet" href="../style/style.css" />
   </head>
   <body>
-  <?php
-    require_once "../scripts/getNavbar.php";
-  ?>
     <div class="wrapper fadInDown">
       <div id="formContent">
         <form action="" method="post">
@@ -17,9 +24,6 @@
             <img src="../images/logomin200x200.png" alt="Computer Shop" />
           </div>
           <div class="fadeIn second">
-            <?php
-            require_once "../scripts/register.php";
-            ?>
             <input class="regInp" type="text" name="login" placeholder="Podaj login" />
           </div>
           <div>
@@ -58,7 +62,7 @@
               >
             </div>
             <div class="col-sm-12 col-md-6 col-lg-6 p-4">
-              <a class="underlineHover" href="./logowanie.php">Zaloguj sie</a>
+              <a class="underlineHover" href="./login.php">Zaloguj sie</a>
             </div>
           </div>
         </div>
