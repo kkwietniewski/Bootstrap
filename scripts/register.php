@@ -1,6 +1,6 @@
 <?php
 
-    // session_start();
+    session_start();
 
     if (isset($_POST['register']))
     {
@@ -52,37 +52,6 @@
             }
         }        
 
-    }
-        // if (isset($_POST['login']))
-        // {
-        //     $login = $_POST['login'];
-        //     $setLogin = true; 
-        // }
-        // else 
-        // {
-        //     $setLogin = false;
-        // }
-
-        // if (isset($_POST['email']))
-        // {
-        //     $email=$_POST['email'];
-        // }
-        
-        // $email=$_POST['email'];
-        //     $pass=$_POST['pass'];
-        //     $validPass=$_POST['validPass'];
-        // && isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['validPass']))
-
-        //  if( == null ||  == null ||  == null ||  == null)
-        //  {
-        //      echo "Uzupełnij"
-        //  }
-        // {
-            
-        // }
-        // else 
-        // {
-               
-        
-
+    }            
+     
 ?>
