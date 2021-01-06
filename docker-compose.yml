@@ -1,9 +1,29 @@
-# version: '3.1'
+version: "3.1"
 
-# services:
-#   php:
-#     image: php:7.4-apache
-#     ports:
-#       - 80:80
-#       volumes:
-#       - ./:/var/www/html
+services:
+  php:
+    build:
+      context: .
+    ports:
+      - 80:80
+    volumes:
+      - ./:/var/www/html
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    ports:
+      - 8081:80
+  db:
+    container_name: mysql
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password123
+    ports:
+      - 3307:3306
+    volumes:
+      - db-vol:/var/lib/mysql
+
+volumes:
+  db-vol:
