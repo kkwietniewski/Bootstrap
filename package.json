@@ -4,7 +4,7 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "compile:sass": "node-sass --include-path scss scss/style.scss style/style.css",
+    "compile:sass": "node-sass --include-path scss scss/register.scss style/register.css",
     "watch:sass": "nodemon -e scss -x \"npm run compile:sass\"",
     "dev": "nodemon ./index.php localhost:80"
   },
