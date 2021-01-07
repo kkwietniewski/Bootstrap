@@ -18,7 +18,7 @@ $theme-colors: (
 
 @import "./node_modules/bootstrap/scss/bootstrap.scss";
 @import "./register.scss";
-@import "./login.scss";
+@import "./searchProducts.scss";
 
 .navbar-nav {
   margin-right: auto;
@@ -36,12 +36,12 @@ body {
 .content,
 .sidebar,
 .footer,
-a {
+a,
+h3 {
   color: var(--text-color);
 }
 .content {
   padding-top: 9.5rem;
-  padding-bottom: 5rem;
   min-height: 700px;
   height: 70%;
 }
@@ -159,6 +159,10 @@ a {
 }
 .comeToTop:hover {
   color: var(--hover-color);
+}
+.hrFooter {
+  margin-top: 5rem;
+  background-color: #8f939c;
 }
 
 // Deleting outline effect

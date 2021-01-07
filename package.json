@@ -11,7 +11,7 @@
   "author": "Kacper Kwietniewski",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.5.3",
+    "bootstrap": "^5.0.0-beta1",
     "bootstrap-icons": "^1.2.2"
   },
   "devDependencies": {

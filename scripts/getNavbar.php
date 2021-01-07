@@ -39,7 +39,7 @@ echo <<<NAV
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
                   <a class="dropdown-item" href="#"
-                    >aaa<img
+                    >Karty graficzne<img
                       src="../images/product.jpg"
                       alt=""
                       srcset=""
@@ -48,17 +48,16 @@ echo <<<NAV
                 </li>
                 <li>
                   <a class="dropdown-item" href="#"
-                    >Another action<img
+                    >Procesory<img
                       src="../images/product.jpg"
                       alt=""
                       srcset=""
                       style="width: 60px; height: 60px"
                   /></a>
                 </li>
-                <li><hr class="dropdown-divider" /></li>
                 <li>
                   <a class="dropdown-item" href="#"
-                    >Something else here<img
+                    >Płyty główne<img
                       src="../images/product.jpg"
                       alt=""
                       srcset=""
@@ -84,7 +83,7 @@ echo <<<NAV
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
                   <a class="dropdown-item" href="#"
-                    >Action<img
+                    >Do gier<img
                       src="../images/product.jpg"
                       alt=""
                       srcset=""
@@ -93,17 +92,16 @@ echo <<<NAV
                 </li>
                 <li>
                   <a class="dropdown-item" href="#"
-                    >Another action<img
+                    >Notebooki<img
                       src="../images/product.jpg"
                       alt=""
                       srcset=""
                       style="width: 60px; height: 60px"
                   /></a>
                 </li>
-                <li><hr class="dropdown-divider" /></li>
                 <li>
                   <a class="dropdown-item" href="#"
-                    >Something else here<img
+                    >Biurowe<img
                       src="../images/product.jpg"
                       alt=""
                       srcset=""
@@ -130,7 +128,7 @@ echo <<<NAV
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
                   <a class="dropdown-item" href="#"
-                    >Action<img
+                    >Smartfony<img
                       src="../images/product.jpg"
                       alt=""
                       srcset=""
@@ -139,17 +137,16 @@ echo <<<NAV
                 </li>
                 <li>
                   <a class="dropdown-item" href="#"
-                    >Another action<img
+                    >Smartwatche<img
                       src="../images/product.jpg"
                       alt=""
                       srcset=""
                       style="width: 60px; height: 60px"
                   /></a>
                 </li>
-                <li><hr class="dropdown-divider" /></li>
                 <li>
                   <a class="dropdown-item" href="#"
-                    >Something else here<img
+                    >Akcesoria do telefonów<img
                       src="../images/product.jpg"
                       alt=""
                       srcset=""
@@ -175,7 +172,7 @@ echo <<<NAV
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
                   <a class="dropdown-item" href="#"
-                    >Action<img
+                    >Głośniki i słuchawki<img
                       src="../images/product.jpg"
                       alt=""
                       srcset=""
@@ -184,17 +181,16 @@ echo <<<NAV
                 </li>
                 <li>
                   <a class="dropdown-item" href="#"
-                    >Another action<img
+                    >Mikrofony<img
                       src="../images/product.jpg"
                       alt=""
                       srcset=""
                       style="width: 60px; height: 60px"
                   /></a>
                 </li>
-                <li><hr class="dropdown-divider" /></li>
                 <li>
                   <a class="dropdown-item" href="#"
-                    >Something else here<img
+                    >Obudowy<img
                       src="../images/product.jpg"
                       alt=""
                       srcset=""
@@ -204,7 +200,7 @@ echo <<<NAV
               </ul>
             </li>
           </ul>
-          <form class="searchBar" action="#">
+          <form class="searchBar" action="../pages/searchProducts.php">
             <input
               class="searchBar-Input"
               type="search"

@@ -1,6 +1,5 @@
 <?php
   session_start();
-    require_once "../scripts/getNavbar.php";
     require_once "../scripts/register.php";
     if (isset($_SESSION['logged']))
     {
@@ -18,56 +17,64 @@
     <link rel="icon" sizes="16x16" type="image/png" href="../images/favicon-16x16.png" />
   </head>
   <body>
-    <div class="wrapper fadInDown">
-      <div id="formContent">
-        <form action="" method="post">
-          <div class="fadeIn first">
-            <img src="../images/logomin200x200.png" alt="Computer Shop" />
-          </div>
-          <div class="fadeIn second">
-            <input class="regInp" type="text" name="login" placeholder="Podaj login" />
-          </div>
-          <div>
-            <input
-              class="regInp fadeIn third"
-              type="text"
-              placeholder="Podaj email"
-              name="email"
-            />
-          </div>
-          <div>
-            <input
-              class="regInp fadeIn fourth"
-              type="password"
-              placeholder="Podaj hasło"
-              name="pass"
-            />
-          </div>
-          <div>
-            <input
-              class="regInp fadeIn fifth"
-              type="password"
-              placeholder="Powtórz hasło"
-              name="validPass"
-            />
-          </div>
-          <button type="submit" class="regBtn fadeIn sixth" name="register">
-            Zarejestruj się
-          </button>
-        </form>
-        <div id="formFooter">
-          <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-6 p-4">
-              <a class="underlineHover" href="./odzyskajHaslo.php"
-                >Odzyskaj hasło</a
-              >
+  <?php
+      require_once "../scripts/getNavbar.php";
+  ?>
+    <div class="container-fluid">
+      <div class="wrapper fadInDown">
+        <div id="formContent">
+          <form action="" method="post">
+            <div class="fadeIn first">
+              <img src="../images/logomin200x200.png" alt="Computer Shop" />
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-6 p-4">
-              <a class="underlineHover" href="./login.php">Zaloguj sie</a>
+            <div class="fadeIn second">
+              <input class="regInp" type="text" name="login" placeholder="Podaj login" />
+            </div>
+            <div>
+              <input
+                class="regInp fadeIn third"
+                type="text"
+                placeholder="Podaj email"
+                name="email"
+              />
+            </div>
+            <div>
+              <input
+                class="regInp fadeIn fourth"
+                type="password"
+                placeholder="Podaj hasło"
+                name="pass"
+              />
+            </div>
+            <div>
+              <input
+                class="regInp fadeIn fifth"
+                type="password"
+                placeholder="Powtórz hasło"
+                name="validPass"
+              />
+            </div>
+            <button type="submit" class="regBtn fadeIn sixth" name="register">
+              Zarejestruj się
+            </button>
+          </form>
+          <div id="formFooter">
+            <div class="row">
+              <div class="col-sm-12 col-md-6 col-lg-6 p-4">
+                <a class="underlineHover" href="./odzyskajHaslo.php"
+                  >Odzyskaj hasło</a
+                >
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-6 p-4">
+                <a class="underlineHover" href="./login.php">Zaloguj sie</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <?php
+        require_once '../scripts/getFooter.php';
+      ?>
     </div>
     <script src="../scripts/script.js"></script>
   </body>
