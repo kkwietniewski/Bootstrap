@@ -1,5 +1,11 @@
 <?php
-    session_start();  
+  session_start();
+    require_once "../scripts/register.php";
+    if (isset($_SESSION['logged']))
+    {
+      header ('Location: ./index.php') ;
+      
+    } 
 ?>
 <!DOCTYPE html>
 <html lang="en">

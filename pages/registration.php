@@ -4,8 +4,8 @@
     if (isset($_SESSION['logged']))
     {
       header ('Location: ./index.php') ;
+      
     }
-    unset($_SESSION['logged']); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
