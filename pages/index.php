@@ -1,3 +1,11 @@
+<?php
+  session_start();
+    if (isset($_SESSION['logged']))
+    {
+      echo 'test';
+      
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,6 +22,7 @@
     <link rel="icon" sizes="16x16" type="image/png" href="../images/favicon-16x16.png" />
   </head>
   <body>
+  
     <?php
       require_once "../scripts/getNavbar.php";
     ?>
