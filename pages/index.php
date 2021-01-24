@@ -1,10 +1,5 @@
 <?php
   session_start();
-    if (isset($_SESSION['logged']))
-    {
-      echo 'test';
-      
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -64,7 +64,11 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-9"></div>
+          <div class="col-lg-9 productsList">
+            <?php
+              require_once '../scripts/getProducts.php';
+            ?>
+          </div>
         </div>
       </div>
       <?php

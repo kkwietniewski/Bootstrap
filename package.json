@@ -8,7 +8,7 @@
     "watch:sass": "nodemon -e scss -x \"npm run compile:sass\"",
     "dev": "nodemon ./index.php localhost:80"
   },
-  "author": "Kacper Kwietniewski",
+  "author": "Kacper Kwietniewski 23648 Monika Nogała 23621",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^5.0.0-beta1",

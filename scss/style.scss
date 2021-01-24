@@ -14,6 +14,7 @@ $link-hover-decoration: none;
 
 $theme-colors: (
   primary: #a08954,
+  secondary: #bbc1c7
 );
 
 @import "./node_modules/bootstrap/scss/bootstrap.scss";
@@ -33,10 +34,12 @@ body {
 .dropdown-toggle::after {
   display: none;
 }
+a{
+  text-decoration: none;
+}
 .content,
 .sidebar,
 .footer,
-a,
 h3 {
   color: var(--text-color);
 }
