@@ -18,7 +18,7 @@
   </head>
   <body>
   <?php
-  require_once "../scripts/getNavbar.php";
+  //require_once "../scripts/getNavbar.php";
   ?>
     <div class="container-fluid">
       <div class="wrapper fadInDown">
@@ -34,6 +34,12 @@
                   echo $_SESSION['error']; 
               }
               unset($_SESSION['error']);
+
+              if (isset($_SESSION['registered']))
+              {
+                echo $_SESSION['registered']; 
+                unset($_SESSION['registered']); 
+              }
               ?>
               <input class="regInp" type="text" name="login" placeholder="Podaj login" />
             </div>

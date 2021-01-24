@@ -1,6 +1,5 @@
 <?php
   session_start();
-    require_once "../scripts/register.php";
     if (isset($_SESSION['logged']))
     {
       header ('Location: ./index.php') ;
@@ -18,12 +17,23 @@
   </head>
   <body>
   <?php
-      require_once "../scripts/getNavbar.php";
+    //  require_once "../scripts/getNavbar.php";
   ?>
     <div class="container-fluid">
       <div class="wrapper fadInDown">
         <div id="formContent">
-          <form action="" method="post">
+        <?php
+          if (isset($_SESSION['err']))
+          {
+            echo<<<ERROR
+            <div class="alert alert-danger" role="alert">
+  $_SESSION[err]
+</div>
+ERROR;
+          unset($_SESSION['err']); 
+          }
+        ?>
+          <form action="../scripts/register.php" method="post">
             <div class="fadeIn first">
               <img src="../images/logomin200x200.png" alt="Computer Shop" />
             </div>
