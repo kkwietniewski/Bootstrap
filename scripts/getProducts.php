@@ -29,12 +29,13 @@ PRODUCTS;
     while ($row = mysqli_fetch_assoc($result))
     {
 echo<<<PRODUCTS
-          <form action="../scripts/addProductToCart.php" method="post">
-            <div class="col-sm-12 col-md-4 col-lg-3 pb-5 d-flex">
-                  <img src="$row[img_src]" class="productImg" alt="product" />
-                  <div class="cardBodyProducts">
-                    <h5 class="">$row[product_name]</h5>
-                    <p class="">
+            <div class="col-sm-12 col-md-4 col-lg-3 pb-5">
+              <form action="../scripts/addProductToCart.php" method="post">
+                <div class="card cardProducts">
+                  <img src="$row[img_src]" class="card-img-top" alt="product" />
+                  <div class="card-body cardBodyProducts">
+                    <a href = "./product.php?productName=$row[product_name]" name = "productName" value = "$row[product_name]"<h5 class="card-title">$row[product_name]</h5></a>
+                    <p class="card-text">
                     $row[description]
                     </p>
                   </div>
@@ -43,8 +44,9 @@ echo<<<PRODUCTS
                     <a type="button" href="#" class="underlineHover linkExtras">Porównaj</a>
                   </div>
                   <button type="submit" class="btn btn-primary btnBuy">Dodaj do koszyka</button>
+                </div>
+              </form>
             </div>
-          </form>
 PRODUCTS;
     }
   }

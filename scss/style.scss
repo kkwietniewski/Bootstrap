@@ -20,6 +20,7 @@ $theme-colors: (
 @import "./node_modules/bootstrap/scss/bootstrap.scss";
 @import "./register.scss";
 @import "./searchProducts.scss";
+@import "./cart.scss";
 
 .navbar-nav {
   margin-right: auto;

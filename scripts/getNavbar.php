@@ -201,12 +201,13 @@ echo <<<NAV
               </ul>
             </li>
           </ul>
-          <form class="searchBar" action="../pages/searchProducts.php">
+          <form class="searchBar" action="./product.php" method="GET">
             <input
               class="searchBar-Input"
               type="search"
               placeholder="Wyszukaj produkt"
               aria-label="searchInput"
+              name = "productName"
             />
             <button class="searchBar-Btn" type="submit" aria-label="searchBtn">
               <svg
