@@ -7113,9 +7113,6 @@ body {
   padding-left: 20%;
   padding-right: 20%; }
 
-.btnBuy {
-  padding-top: 15%; }
-
 .producer, .model {
   display: flex;
   flex-direction: column; }
@@ -7256,6 +7253,11 @@ a {
 .hrFooter {
   margin-top: 5rem;
   background-color: #8f939c; }
+
+.nav-link > .badge {
+  position: absolute;
+  left: 38px;
+  bottom: -7px; }
 
 input.active.focus,
 input.active:focus,

@@ -30,20 +30,22 @@ PRODUCTS;
     {
 echo<<<PRODUCTS
             <div class="col-sm-12 col-md-4 col-lg-3 pb-5">
-              <div class="card cardProducts">
-                <img src="$row[img_src]" class="card-img-top" alt="product" />
-                <div class="card-body cardBodyProducts">
-                  <h5 class="card-title">$row[product_name]</h5>
-                  <p class="card-text">
-                  $row[description]
-                  </p>
+              <form action="../scripts/addProductToCart.php" method="post">
+                <div class="card cardProducts">
+                  <img src="$row[img_src]" class="card-img-top" alt="product" />
+                  <div class="card-body cardBodyProducts">
+                    <h5 class="card-title">$row[product_name]</h5>
+                    <p class="card-text">
+                    $row[description]
+                    </p>
+                  </div>
+                  <div class="extras">
+                    <a type="button" href="#" class="underlineHover linkExtras">Sprawdź dostępność</a>
+                    <a type="button" href="#" class="underlineHover linkExtras">Porównaj</a>
+                  </div>
+                  <button type="submit" class="btn btn-primary btnBuy">Dodaj do koszyka</button>
                 </div>
-                <div class="extras">
-                  <a href="#" class="underlineHover linkExtras">Sprawdź dostępność</a>
-                  <a href="#" class="underlineHover linkExtras">Porównaj</a>
-                </div>
-                <a href="#" class="btn btn-primary btnBuy">Dodaj do koszyka</a>
-              </div>
+              </form>
             </div>
 PRODUCTS;
     }

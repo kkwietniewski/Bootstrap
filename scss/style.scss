@@ -168,6 +168,11 @@ h3 {
   background-color: #8f939c;
 }
 
+.nav-link>.badge{
+  position: absolute;
+  left: 38px; 
+  bottom: -7px;
+}
 // Deleting outline effect
 input.active.focus,
 input.active:focus,

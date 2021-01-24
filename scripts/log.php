@@ -33,6 +33,8 @@
                 $dbPass = $line['password']; 
                 if ($login == $dbLogin && password_verify($pass, $dbPass))
                 {
+                    
+                    $_SESSION["product_counter"] = 0;
                     $_SESSION['logged'] = true;
                     $conn->close();
                     header('Location: ../pages/index.php'); 
