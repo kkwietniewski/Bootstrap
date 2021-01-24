@@ -14,10 +14,16 @@ $link-hover-decoration: none;
 
 $theme-colors: (
   primary: #a08954,
+  secondary: #bbc1c7
 );
 
 @import "./node_modules/bootstrap/scss/bootstrap.scss";
+@import "./register.scss";
+@import "./searchProducts.scss";
 
+.navbar-nav {
+  margin-right: auto;
+}
 .menuIcon {
   width: 26px;
   height: 26px;
@@ -28,15 +34,17 @@ body {
 .dropdown-toggle::after {
   display: none;
 }
+a{
+  text-decoration: none;
+}
 .content,
 .sidebar,
 .footer,
-a {
+h3 {
   color: var(--text-color);
 }
 .content {
   padding-top: 9.5rem;
-  padding-bottom: 5rem;
   min-height: 700px;
   height: 70%;
 }
@@ -59,7 +67,6 @@ a {
 }
 .footer {
   height: 10%;
-  // width: auto;
   min-height: 100px;
 }
 .card {
@@ -89,6 +96,7 @@ a {
   position: relative;
   transition: width 300ms cubic-bezier(0.07, 0.42, 0.63, 1.08);
   overflow: hidden;
+  margin: 0;
 
   &-Input {
     flex-grow: 0.6;
@@ -154,6 +162,10 @@ a {
 }
 .comeToTop:hover {
   color: var(--hover-color);
+}
+.hrFooter {
+  margin-top: 5rem;
+  background-color: #8f939c;
 }
 
 // Deleting outline effect

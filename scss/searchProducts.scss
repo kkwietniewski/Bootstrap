@@ -1,0 +1,51 @@
+.filters {
+  padding: 2.5rem;
+  padding-right: 40%;
+}
+.form-check-input:checked {
+  background-color: #a08954;
+  border-color: #a08954;
+  box-shadow: #a08954;
+}
+.productsList{
+  padding-top: 5.5rem;
+}
+.cardProducts{
+  flex-direction: row;
+}
+.cardBodyProducts{
+  display: flex;
+  flex-direction: column;
+  min-width: 800px;
+  max-width: 800px;
+  max-height: 200px;
+}
+.cardBodyProducts > h1{
+  flex-direction: row;
+}
+.cardBodyProducts > p{
+  flex-direction: column;
+}
+.extras{
+  min-width: 200px;
+}
+.extras>a{
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.linkExtras{
+  height: auto;
+  color: #a08954;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+.btnBuy{
+  padding-top: 15%;
+}
+.producer, .model{
+  display: flex;
+  flex-direction: column;
+}
+.producer>*:last-child, .model>*:last-child{
+  align-self: center;
+}

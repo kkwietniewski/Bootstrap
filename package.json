@@ -4,14 +4,15 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "compile:sass": "node-sass --include-path scss scss/register.scss style/register.css",
+    "compile:sass": "node-sass --include-path scss scss/style.scss style/style.css",
     "watch:sass": "nodemon -e scss -x \"npm run compile:sass\"",
     "dev": "nodemon ./index.php localhost:80"
   },
-  "author": "Kacper Kwietniewski",
+  "author": "Kacper Kwietniewski 23648 Monika Nogała 23621",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.5.3"
+    "bootstrap": "^5.0.0-beta1",
+    "bootstrap-icons": "^1.2.2"
   },
   "devDependencies": {
     "node-sass": "^5.0.0",
