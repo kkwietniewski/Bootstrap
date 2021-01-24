@@ -17,7 +17,7 @@
   </head>
   <body>
   <?php
-    //  require_once "../scripts/getNavbar.php";
+      require_once "../scripts/getNavbar.php";
   ?>
     <div class="container-fluid">
       <div class="wrapper fadInDown">

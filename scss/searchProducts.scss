@@ -1,5 +1,6 @@
 .filters {
   padding: 2.5rem;
+  padding-right: 40%;
 }
 .form-check-input:checked {
   background-color: #a08954;
@@ -40,4 +41,11 @@
 }
 .btnBuy{
   padding-top: 15%;
+}
+.producer, .model{
+  display: flex;
+  flex-direction: column;
+}
+.producer>*:last-child, .model>*:last-child{
+  align-self: center;
 }

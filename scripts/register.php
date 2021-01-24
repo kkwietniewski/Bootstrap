@@ -49,7 +49,7 @@
                         $users = $result->num_rows;
                         if ($users > 0)
                         {
-                            $_SESSION['err'] = "Taki użytkownik już istnieje"; 
+                            $_SESSION['err'] = "Taki użytkownik już istnieje!"; 
                             header ('Location: ../pages/registration.php'); 
                         }
                         else {
