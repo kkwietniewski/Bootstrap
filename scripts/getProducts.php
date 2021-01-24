@@ -34,7 +34,7 @@ echo<<<PRODUCTS
                 <div class="card cardProducts">
                   <img src="$row[img_src]" class="card-img-top" alt="product" />
                   <div class="card-body cardBodyProducts">
-                    <h5 class="card-title">$row[product_name]</h5>
+                    <a href = "./product.php?productName=$row[product_name]" name = "productName" value = "$row[product_name]"<h5 class="card-title">$row[product_name]</h5></a>
                     <p class="card-text">
                     $row[description]
                     </p>
