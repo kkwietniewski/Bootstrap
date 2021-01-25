@@ -29,24 +29,24 @@ PRODUCTS;
     while ($row = mysqli_fetch_assoc($result))
     {
 echo<<<PRODUCTS
-            <div class="col-sm-12 col-md-4 col-lg-3 pb-5">
-              <form action="../scripts/addProductToCart.php" method="post">
-                <div class="card cardProducts">
-                  <img src="$row[img_src]" class="card-img-top" alt="product" />
-                  <div class="card-body cardBodyProducts">
-                    <a href = "./product.php?productName=$row[product_name]" name = "productName" value = "$row[product_name]"<h5 class="card-title">$row[product_name]</h5></a>
-                    <p class="card-text">
-                    $row[description]
-                    </p>
-                  </div>
-                  <div class="extras">
-                    <a type="button" href="#" class="underlineHover linkExtras">Sprawdź dostępność</a>
-                    <a type="button" href="#" class="underlineHover linkExtras">Porównaj</a>
-                  </div>
-                  <button type="submit" class="btn btn-primary btnBuy">Dodaj do koszyka</button>
-                </div>
+          <form action="../scripts/addProductToCart.php" method="post">
+            <div class="row productBody">
+                    <div class="col-lg-2">
+                      <img src="$row[img_src]" class="productImg" alt="product" />
+                    </div>
+                    <div class="productText col-lg-8">
+                      <a href = "./product.php?productName=$row[product_name]" name = "productName" value = "$row[product_name]"><h5 class="card-title">$row[product_name]</h5></a>
+                      <p>
+                      $row[description]
+                      </p>
+                    </div>
+                    <div class="extras col-lg-2">
+                      <a type="button" href="#">Sprawdź dostępność</a>
+                      <a type="button" href="#">Porównaj</a>
+                      <button type="submit" class="btn btn-primary btnBuy">Dodaj do koszyka</button>
+                    </div>
+              </div>
               </form>
-            </div>
 PRODUCTS;
     }
   }
