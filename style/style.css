@@ -7082,48 +7082,19 @@ body {
   box-shadow: #a08954; }
 
 .productImg {
-  width: 75%;
-  height: 75%; }
+  width: 75%; }
 
 .productsList {
   padding-top: 5.5rem; }
 
-.cardBodyProducts {
-  display: flex;
-  flex-direction: column;
-  min-width: 600px;
-  max-width: 800px;
-  flex-basis: auto;
-  flex-grow: 1;
-  max-height: 200px; }
+.productBody {
+  padding-bottom: 2%; }
 
-.cardBodyProducts > h5, .cardBodyProducts > .h5 {
+.productText > a {
   text-align: center; }
 
-.cardBodyProducts > p {
-  padding-left: 10%;
-  padding-right: 10%;
-  flex-direction: column; }
-
-.extras {
-  min-width: 200px; }
-
-.extras > a {
-  margin-top: 10%;
-  margin-bottom: 10%; }
-
-.linkExtras {
-  height: auto;
-  color: #a08954;
-  padding-left: 20%;
-  padding-right: 20%; }
-
-.producer, .model {
-  display: flex;
-  flex-direction: column; }
-
-.producer > *:last-child, .model > *:last-child {
-  align-self: center; }
+.productText > p {
+  font-weight: 400; }
 
 .cart > .row {
   min-height: 900px; }
