@@ -1,0 +1,29 @@
+.cart>.row{
+  min-height: 900px;
+}
+.cartBody{
+  padding: 6% 4% 2% 4%;
+  margin-top: 5.5rem;
+  background-color: #fff;
+  box-shadow:0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+}
+.cartTitle{
+  display: block;
+  padding-bottom: 5%;
+}
+.cartProducts{
+  height: 100%;
+  background: #dfe6e6;
+  border-radius: 10px;
+  border-bottom: #dfe6e6;
+}
+.cartBody>.row{
+}
+.cartSummary{
+  padding-top: 2%;
+  text-align: center;
+}
+.cartProducts>.row{
+  padding: 2%;
+}
