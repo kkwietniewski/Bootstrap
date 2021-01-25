@@ -7123,6 +7123,98 @@ body {
 .cartProducts > .row {
   padding: 2%; }
 
+.productView {
+  padding: 4% 4% 2% 4%;
+  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3); }
+
+.productViewImg > img {
+  width: 75%; }
+
+.productViewText > h2, .productViewText > .h2 {
+  padding-bottom: 2%; }
+
+.productViewBtns {
+  padding-top: 8%; }
+
+.productViewBtns > h4, .productViewBtns > .h4 {
+  text-align: center; }
+
+.availability {
+  margin-top: 2%;
+  font-weight: 400; }
+
+.productExtend {
+  padding-top: 10%; }
+
+.productExtend > .nav {
+  padding-bottom: 5%; }
+
+.productGroup {
+  padding-bottom: 0 !important; }
+
+.productDescription > h2, .productDescription > .h2, .productSpecification > h2, .productSpecification > .h2, .productOpinions > h2, .productOpinions > .h2 {
+  padding-bottom: 2%; }
+
+.descriptionImg > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px; }
+
+.descriptionText {
+  padding-top: 5%;
+  word-wrap: break-word; }
+
+.table-hover {
+  background-color: white;
+  text-align: center; }
+
+.productOpinions {
+  padding: 3%; }
+
+.addOpinion {
+  border-left: 1px solid currentColor;
+  text-align: center;
+  position: relative; }
+
+.addOpinion .rating input {
+  display: none; }
+
+.rating label {
+  padding: 5px;
+  float: right;
+  transition: all 0.2s ease; }
+
+input#rate-5 ~ label {
+  padding-right: 8%;
+  cursor: pointer; }
+
+.rating input:not(:checked) ~ label:hover,
+.rating input:not(:checked) ~ label:hover ~ label {
+  color: var(--bs-primary); }
+
+input:checked ~ label {
+  color: var(--bs-primary); }
+
+form .textarea {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; }
+
+form .textarea textarea {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  background-color: var(--navbar-color);
+  color: var(--text-color);
+  padding: 20px;
+  resize: none; }
+
+.rating > form {
+  display: none; }
+
+.rating > input:checked ~ form {
+  display: block; }
+
 .navbar-nav {
   margin-right: auto; }
 
