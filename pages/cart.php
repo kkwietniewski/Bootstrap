@@ -17,6 +17,7 @@
     ?>
     <!-- container-fluid-->
     <div class="container-fluid">
+    
       <!-- content-->
       <div class="cart">
         <div class="row p-5">
@@ -28,7 +29,10 @@
             <div class="row">
               <hr>
               <div class="cartProducts col-lg-10">
-                <div class="row">
+              <?php
+                require_once "../scripts/showCart.php";
+              ?>
+                <!-- <div class="row">
                   <div class="col-lg-2">
                     <img src="../images/product.jpg" alt="" style="width:60px; height:60px;">
                   </div>
@@ -60,18 +64,7 @@
                   <div class="col-lg-2">
                     <h6>200zł</h6>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-2">
-                    <img src="../images/product.jpg" alt="" style="width:60px; height:60px;">
-                  </div>
-                  <div class="col-lg-8">
-                    <h6>Nazwa</h6>
-                  </div>
-                  <div class="col-lg-2">
-                    <h6>200zł</h6>
-                  </div>
-                </div>
+                </div> -->
               </div>
               <div class="col-lg-2">
               </div>
@@ -79,7 +72,18 @@
             <div class="row">
               <div class="col-lg-10"></div>
               <div class="cartSummary col-lg-2">
-                <h6>Do zapłaty: <strong>1000zł</strong></h6>
+                <h6>Do zapłaty: <strong>
+                <?php 
+                  if (isset($_SESSION['cartCost']))
+                  {
+                    echo $_SESSION['cartCost'];
+                  } 
+                  else 
+                  {
+                    echo 0;
+                  }
+                ?>
+                </strong></h6>
               </div>
             </div>
             <div class="row">
@@ -90,6 +94,7 @@
             </div>
           </div>
           <div class="col-lg-2 d-flex"></div>
+          
       </div>
       <!-- content-->
       <?php
