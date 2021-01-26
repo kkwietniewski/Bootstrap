@@ -54,7 +54,7 @@
             </div>
             <div class="col-lg-2 productViewBtns">
                 <h4>$dbPrice zł</h4>
-                <button type="submit" class="btn btn-primary btnBuy">Dodaj do koszyka</button>     
+                <button type="submit" class="btn btn-primary btnBuy" name="product" value="$dbId">Dodaj do koszyka</button>   
             </div>
         </div>
     </form>
