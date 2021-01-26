@@ -43,7 +43,7 @@ echo<<<PRODUCTS
                     <div class="extras col-lg-2">
                       <a type="button" href="#">Sprawdź dostępność</a>
                       <a type="button" href="#">Porównaj</a>
-                      <button type="submit" class="btn btn-primary btnBuy" name="product" value="$row[product_id]">Dodaj do koszyka</button>
+                      <button type="input" class="btn btn-primary btnBuy" name="product" value="$row[product_id]">Dodaj do koszyka</button>
                     </div>
               </div>
               </form>
