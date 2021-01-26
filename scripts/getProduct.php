@@ -14,7 +14,7 @@
     }
     else
     {
-        if ($result = @$conn->query(sprintf("SELECT * FROM products WHERE product_name ='%s'", mysqli_real_escape_string($conn,$name))))
+        if ($result = @$conn->query(sprintf("SELECT * FROM products AS p JOIN subcategory AS s ON p.subcategory = s.subcategory_id WHERE p.product_name = '%s' ", mysqli_real_escape_string($conn,$name))))
         {
             $products = $result->num_rows;
             if ($products > 0)
@@ -27,7 +27,7 @@
                 $dbImg = $line['img_src'];
                 $dbAvailability = $line['availability'];
                 $dbWeight = $line['weight'];
-                $dbSubcategory = $line['subcategory'];
+                $dbSubcategory = $line['subcategory_name'];
                 $dbBrand = $line['brand']; 
                 $dbDescription = $line['description'];
                 $dbStoreLabel = $line['store_label'];
