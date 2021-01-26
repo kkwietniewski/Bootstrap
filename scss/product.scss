@@ -54,12 +54,15 @@
 .addOpinion .rating input{
   display: none;
 }
-.rating label{
-  padding: 5px;
-  float: right;
+.rating{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.rating>label{
   transition: all 0.2s ease;
 }
-input#rate-5 ~ label{
+input>#rate-5 ~ label{
   padding-right: 8%;
   cursor: pointer;
 }
@@ -87,9 +90,6 @@ form .textarea textarea{
   padding: 20px;
   resize: none;
 }
-.rating>form{
+.addOpinion>form{
   display: none;
-}
-.rating>input:checked ~ form{
-  display: block;
 }

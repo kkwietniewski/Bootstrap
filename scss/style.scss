@@ -87,6 +87,9 @@ h3 {
   background: var(--navbar-color);
   z-index: 99;
 }
+.nav-item>.dropdown-menu{
+  min-width: 100%;
+}
 .searchBar {
   --size: 40px;
   display: flex;
@@ -111,10 +114,11 @@ h3 {
     left: 0;
     opacity: 0;
     cursor: pointer;
+    width: 93%!important;
   }
 
   &:focus-within {
-    width: 30%;
+    width: 35%;
     @media screen and(max-width: 770px) {
       width: 100%;
     }
@@ -135,16 +139,6 @@ h3 {
   }
   &-Btn:focus {
     outline: 0;
-  }
-}
-.dropdown-item {
-  img {
-    display: none;
-  }
-}
-.dropdown-item:hover {
-  img {
-    display: inline-flex;
   }
 }
 .comeToTop {

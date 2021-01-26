@@ -7186,12 +7186,15 @@ body {
 .addOpinion .rating input {
   display: none; }
 
-.rating label {
-  padding: 5px;
-  float: right;
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between; }
+
+.rating > label {
   transition: all 0.2s ease; }
 
-input#rate-5 ~ label {
+input > #rate-5 ~ label {
   padding-right: 8%;
   cursor: pointer; }
 
@@ -7216,11 +7219,8 @@ form .textarea textarea {
   padding: 20px;
   resize: none; }
 
-.rating > form {
+.addOpinion > form {
   display: none; }
-
-.rating > input:checked ~ form {
-  display: block; }
 
 .navbar-nav {
   margin-right: auto; }
@@ -7285,6 +7285,9 @@ a {
   background: var(--navbar-color);
   z-index: 99; }
 
+.nav-item > .dropdown-menu {
+  min-width: 100%; }
+
 .searchBar {
   --size: 40px;
   display: flex;
@@ -7307,9 +7310,10 @@ a {
     bottom: 0;
     left: 0;
     opacity: 0;
-    cursor: pointer; }
+    cursor: pointer;
+    width: 93% !important; }
   .searchBar:focus-within {
-    width: 30%; }
+    width: 35%; }
     @media screen and (max-width: 770px) {
       .searchBar:focus-within {
         width: 100%; } }
@@ -7327,12 +7331,6 @@ a {
     margin-left: auto; }
   .searchBar-Btn:focus {
     outline: 0; }
-
-.dropdown-item img {
-  display: none; }
-
-.dropdown-item:hover img {
-  display: inline-flex; }
 
 .comeToTop {
   display: none;
