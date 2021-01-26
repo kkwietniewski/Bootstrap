@@ -7120,8 +7120,15 @@ body {
   padding-top: 2%;
   text-align: center; }
 
-.cartProducts > .row {
-  padding: 2%; }
+.cartProducts > .productsRow {
+  padding: 2%;
+  border-bottom: 1px solid #fff; }
+
+.titleRow {
+  padding: 2% 2% 0% 2%; }
+
+.productsRow > .col-lg-2 > h6, .productsRow > .col-lg-2 > .h6, .titleRow > .col-lg-2 > h4, .titleRow > .col-lg-2 > .h4 {
+  text-align: right; }
 
 .productView {
   padding: 4% 4% 2% 4%;

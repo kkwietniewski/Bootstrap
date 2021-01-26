@@ -28,7 +28,23 @@
             </div>
             <div class="row">
               <hr>
+              <div class="col-lg-10">
+                <div class="row titleRow">
+                  <div class="col-lg-2">
+                  </div>
+                  <div class="col-lg-7">
+                    <h4>Nazwa</h4>
+                  </div>
+                  <div class="col-lg-1">
+                    <h4>Ilość</h4>
+                  </div>
+                  <div class="col-lg-2">
+                    <h4>Cena</h4>
+                  </div>
+                </div>
+              </div>
               <div class="cartProducts col-lg-10">
+              
               <?php
                 require_once "../scripts/showCart.php";
               ?>

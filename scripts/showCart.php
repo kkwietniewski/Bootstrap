@@ -8,15 +8,18 @@
     foreach($dbCart as $product)
     {
     echo<<<CART
-    <div class="row">
+    <div class="row productsRow">
       <div class="col-lg-2">
         <img src="$product[4]" alt="" style="width:60px; height:60px;">
       </div>
-      <div class="col-lg-8">
+      <div class="col-lg-7">
         <h6>$product[1]</h6>
       </div>
+      <div class="col-lg-1">
+        <h6>$product[2]</h6>
+      </div>
       <div class="col-lg-2">
-        <h6>$product[2] * $product[3] zł</h6>
+        <h6>$product[3] zł</h6>
       </div>
     </div>
 CART;
