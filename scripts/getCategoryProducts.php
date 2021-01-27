@@ -116,7 +116,7 @@ BREADCRUMB;
             </nav>
 BREADCRUMB;
         }
-        echo<<<FILTERS
+        echo<<<PRODUCER
         <div class="row">
             <div class="col-lg-3">
             <form action="#" method="post">
@@ -125,143 +125,47 @@ BREADCRUMB;
                 <hr />
                 <div class="producer">
                     <h5>Producent</h5>
+PRODUCER;
+        foreach($productsArray as $index=>$p)
+                {
+                    echo<<<PRODUCER
                     <div class="form-check">
-                    <input
-                        class="form-check-input"
-                        type="radio"
-                        name="radioProducer1"
-                        id="radioProducer1"
-                        checked
-                    />
-                    <label class="form-check-label" for="radioProducer1">
-                        Default radio
-                    </label>
+                        <input
+                            class="form-check-input" type="radio" name="radioProducer" id="radioProducer$index"/>
+                        <label class="form-check-label" for="radioProducer$index">$p[8]</label>
                     </div>
-                    <div class="form-check">
-                    <input
-                        class="form-check-input"
-                        type="radio"
-                        name="radioProducer2"
-                        id="radioProducer2"
-                    />
-                    <label class="form-check-label" for="radioProducer2">
-                        Default radio
-                    </label>
-                    </div>
-                    <div class="form-check">
-                    <input
-                        class="form-check-input"
-                        type="radio"
-                        name="radioProducer3"
-                        id="radioProducer3"
-                    />
-                    <label class="form-check-label" for="radioProducer3">
-                        Default radio
-                    </label>
-                    </div>
-                    <div class="form-check">
-                    <input
-                        class="form-check-input"
-                        type="radio"
-                        name="radioProducer4"
-                        id="radioProducer4"
-                    />
-                    <label class="form-check-label" for="radioProducer4">
-                        Default radio
-                    </label>
-                    </div>
-                    <div class="form-check">
-                    <input
-                        class="form-check-input"
-                        type="radio"
-                        name="radioProducer5"
-                        id="radioProducer5"
-                    />
-                    <label class="form-check-label" for="radioProducer5">
-                        Default radio
-                    </label>
-                    </div>
-                    <div class="form-check">
-                    <input
-                        class="form-check-input"
-                        type="radio"
-                        name="radioProducer6"
-                        id="radioProducer6"
-                    />
-                    <label class="form-check-label" for="radioProducer6">
-                        Default radio
-                    </label>
-                    </div>
+PRODUCER;
+                }
+        echo<<<MODEL
                 </div><!-- producer -->
                 <div class="model">
                     <h5>Model</h5>
+MODEL;
+        foreach($productsArray as $index=>$p)
+                {
+                    echo<<<MODEL
                     <div class="form-check">
-                    <input
-                        class="form-check-input"
-                        type="checkbox"
-                        value=""
-                        id="checkModel1"
-                    />
-                    <label class="form-check-label" for="checkModel1">
-                        Default checkbox1
-                    </label>
+                        <input class="form-check-input" type="checkbox" value="" id="checkModel$index"/>
+                        <label class="form-check-label" for="$index">$p[1] - $p[2]</label>
                     </div>
-                    <div class="form-check">
-                    <input
-                        class="form-check-input"
-                        type="checkbox"
-                        value=""
-                        id="checkModel2"
-                    />
-                    <label class="form-check-label" for="checkModel2">
-                        Default checkbox2
-                    </label>
-                    </div>
-                    <div class="form-check">
-                    <input
-                        class="form-check-input"
-                        type="checkbox"
-                        value=""
-                        id="checkModel3"
-                    />
-                    <label class="form-check-label" for="checkModel3">
-                        Default checkbo3
-                    </label>
-                    </div>
-                    <div class="form-check">
-                    <input
-                        class="form-check-input"
-                        type="checkbox"
-                        value=""
-                        id="checkModel4"
-                    />
-                    <label class="form-check-label" for="checkModel4">
-                        Default checkbox4
-                    </label>
-                    </div>
-                    <div class="form-check">
-                    <input
-                        class="form-check-input"
-                        type="checkbox"
-                        value=""
-                        id="checkModel5"
-                    />
-                    <label class="form-check-label" for="checkModel5">
-                        Default checkbox5
-                    </label>
-                    </div>
-                    <div class="form-check">
-                    <input
-                        class="form-check-input"
-                        type="checkbox"
-                        value=""
-                        id="checkModel6"
-                    />
-                    <label class="form-check-label" for="checkModel6">
-                        Default checkbox6
-                    </label>
-                    </div>
+MODEL;
+                }
+                echo<<<DIAGONAL
                 </div><!-- model -->
+                <div class="diagonal">
+                    <h5>Przekątna</h5>
+DIAGONAL;
+        foreach($productsArray as $index=>$p)
+                {
+                    echo<<<DIAGONAL
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkModel$index"/>
+                        <label class="form-check-label" for="$index">$p[11]"</label>
+                    </div>
+DIAGONAL;
+                }
+                echo<<<FILTERS
+                </div><!-- diagonal -->
                 <div class="price">
                 <h5>Cena</h5>
                 <div class="input-group mb-3">
