@@ -2,18 +2,26 @@
     
     require_once '../scripts/connect.php';
 
-    if (isset($_GET['productName']))
+    if (empty($_GET['productName']))
+    {
+        echo<<<EMPTY
+        <div>Proszę wpisać nazwę produktu!</div>
+        </div>
+EMPTY;
+
+    }
+    else if (!empty($_GET['productName']))
     {
         $name = $_GET['productName'];
-    
-    }
 
-    if(!$conn)
-    {
-        echo "Error"; 
-    }
-    else
-    {
+    try 
+        {
+        if ($conn->connect_errno!=0)
+        {
+            throw new Exception(mysqli_connect_errno());
+        }
+        else
+        {
         if ($result = @$conn->query(sprintf("SELECT * FROM products AS p JOIN subcategory AS s ON p.subcategory = s.subcategory_id WHERE p.product_name = '%s' ", mysqli_real_escape_string($conn,$name))))
         {
             $products = $result->num_rows;
@@ -272,5 +280,11 @@ PRODUCT;
                     </div>
                 </div>
 PRODUCT;
+    }
+    catch (Exception $e)
+{
+    echo $e;
+}
+} 
 
 ?>
