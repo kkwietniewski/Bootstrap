@@ -5,15 +5,15 @@
   $cat1 = "Peryferia komputerowe";
   $sub1 = "Skanery i drukarki"; 
   $sub2 = "Monitory";
-  $sub3 = "Tablety grficzne"; 
-  $cat2 = "Laptopy i komputery";
+  $sub3 = "Tablety graficzne"; 
+  $cat2 = "Komputery i laptopy";
   $sub4 = "Gamingowe";
   $sub5 = "Notebooki"; 
   $sub6 = "Biurowe"; 
   $cat3 = "Smartfony i gadżety";
   $sub7 = "Smartfony";
   $sub8 = "Smartwatche"; 
-  $sub9 = "Akcesoria do telefonów"; 
+  $sub9 = "Akcesoria"; 
   echo <<<NAV
 <nav class="navbar navbar-expand-md navbar-dark fixed-top">
       <!-- container-fluid-->
@@ -46,7 +46,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
                 name=$name
-                value="$cat1"
+                value=$cat1
                 
               >
               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-mouse" viewBox="0 0 16 16">
@@ -81,7 +81,7 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href=href="./products.php?$name=$cat2"
+                href="./products.php?$name=$cat2"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
