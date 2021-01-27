@@ -20,7 +20,7 @@
     
       <!-- content-->
       <div class="cart">
-        <div class="row p-5">
+        <div class="row p-5 fadeInDown">
           <div class="col-lg-2 d-flex"></div>
           <div class="cartBody col-lg-8">
             <div class="cartTitle">

@@ -16,7 +16,14 @@
   padding-bottom: 1rem;
 }
 .productBody{
-  padding-bottom: 2%;
+  display: flex;
+  margin-bottom: 2%;
+  padding: 2%;
+  border-radius: 15px;
+  align-items: center;
+}
+.productBody:hover{
+  box-shadow:0 30px 60px 20px rgba(0, 0, 0, 0.3);
 }
 .productText > p{
   font-weight: 400;

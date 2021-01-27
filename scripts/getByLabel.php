@@ -35,7 +35,7 @@ LABEL;
     </div>
 DIV;
 
-     $query = sprintf("SELECT p.product_name, p.description, p.img_src, p.price FROM products AS p JOIN store_labels AS s
+     $query = sprintf("SELECT p.label, p.product_name, p.brand, p.color, p.img_src, p.price FROM products AS p JOIN store_labels AS s
      ON p.store_label = s.store_label_id WHERE store_label_name = '%s' ", mysqli_real_escape_string($conn,$label)); 
 
     try 
@@ -62,10 +62,12 @@ DIV;
                                     <h5 class="card-title">$row[product_name]</h5>
                                     <p>Cena: $row[price] zł</p>
                                     <p class="card-text">
-                                        $row[description]
+                                    <p><b>Kod produktu: </b> $row[label]</p>
+                                    <p><b>Producent: </b> $row[brand]</p>
+                                    <p><b>Kolor: </b> $row[color]</p>
                                     </p>
-                                    <a href="#" class="btn btn-primary">Zobacz produkt</a>
                                 </div>
+                                <a href = "./product.php?productName=$row[product_name]" class = "btn btn-primary" name = "productName" value = "$row[product_name]">Zobacz produkt</a>
                             </div>
                         </div>
 PRODUCTS;

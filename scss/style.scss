@@ -75,11 +75,13 @@ h3 {
 }
 .card {
   background: var(--back-color);
-  text-align: center;
   border: none;
+  height: 100%;
+  padding: 1rem;
+  border-radius: 10px;
 }
 .card:hover {
-  border: 1px solid #494d55;
+  box-shadow:0 30px 60px 20px rgba(0, 0, 0, 0.3);
 }
 .logo {
   color: var(--text-color);

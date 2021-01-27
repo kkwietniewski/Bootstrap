@@ -26,22 +26,10 @@
       <!-- content-->
       <div class="content">
         <!-- btn-group-toggle-->
-       
-                <?php
-                  require_once '../scripts/getByLabel.php';
-                ?>
-
-        <!-- btn-group-toggle-->
-        <!-- row-->
-
-        
-
-       
-
         <?php
-          // require_once '../scripts/getProducts.php' ;
+          require_once '../scripts/getByLabel.php';
         ?>
-
+        <!-- btn-group-toggle-->
       </div>
       <!-- content-->
       <?php

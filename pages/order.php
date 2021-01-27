@@ -22,7 +22,7 @@
       <div class="cart">
         <div class="row p-5">
           <div class="col-lg-2 d-flex"></div>
-          <div class="cartBody col-lg-8">
+          <div class="cartBody col-lg-8 fadeInDown">
             <div class="cartTitle">
               <h2>Wybór sposobu płatności i dostawy</h2>
             </div>
