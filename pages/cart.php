@@ -32,14 +32,16 @@
                 <div class="row titleRow">
                   <div class="col-lg-2">
                   </div>
-                  <div class="col-lg-7">
+                  <div class="col-lg-5">
                     <h4>Nazwa</h4>
                   </div>
                   <div class="col-lg-1">
                     <h4>Ilość</h4>
                   </div>
-                  <div class="col-lg-2">
+                  <div class="col-lg-3" style="text-align:center;">
                     <h4>Cena</h4>
+                  </div>
+                  <div class="col-lg-1">
                   </div>
                 </div>
               </div>
@@ -59,11 +61,11 @@
                 <?php 
                   if (isset($_SESSION['cartCost']))
                   {
-                    echo $_SESSION['cartCost'];
+                    echo $_SESSION['cartCost'],'zł';
                   } 
                   else 
                   {
-                    echo 0;
+                    echo 0,'zł';
                   }
                 ?>
                 </strong></h6>
@@ -72,7 +74,7 @@
             <div class="row">
               <div class="col-lg-10"></div>
               <div class="col-lg-2">
-                <a href="./order.php" class="btn btn-primary" style="width: 100%; color:white;">Zapłać</a>
+                <a href="./order.php" class="btn btn-primary" style="width: 100%; color:white;">Przejdź do płatności</a>
               </div>
             </div>
           </div>

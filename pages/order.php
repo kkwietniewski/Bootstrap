@@ -114,13 +114,26 @@
                       <div class="col-10">
                         <p>Forma płatności</p>
                         <p>Dostawa</p>
+                        <h6>Do zapłaty:</h6>
                       </div>
                       <div class="col-2">
-                        <p>5</p>
-                        <p>8,99</p>
+                        <p>5zł</p>
+                        <p>8,99zł</p>
+                        <h6><strong><?php 
+                          if (isset($_SESSION['cartCost']))
+                          {
+                            echo $_SESSION['cartCost'],'zł';
+                          } 
+                          else 
+                          {
+                            echo 0,'zł';
+                          }
+                        ?></strong></h6>
+                      </div>
+                      <div class="payButton">
+                        <button type="submit" class="btn btn-primary">Zapłać i zamów</button>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Zapłać</button>
                   </div>
               </div>
             </div>
