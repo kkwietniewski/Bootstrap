@@ -1,0 +1,20 @@
+.cartBody>.row>.row>.col-lg-8>form>.row{
+  padding-top: 1rem;
+}
+.payContainer{
+  position: relative;
+}
+.payContainer>button{
+  width: 93%; 
+  color:white;
+  position: absolute;
+  right: 0;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+}
+.payContainer>h4{
+  padding-bottom: 0.5rem;
+}
+.payContainer>.row>.col-2>p{
+  text-align: right;
+}
