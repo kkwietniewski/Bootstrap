@@ -1,34 +1,20 @@
 <?php
     require_once '../scripts/connect.php'; 
     
-    $sql = "SELECT * FROM products LIMIT 8"; 
-    $result = mysqli_query($conn, $sql); 
-    
-    $currentPage = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
-    
-  if($currentPage == 'index.php'){
-    while ($row = mysqli_fetch_assoc($result))
+    $sql = "SELECT * FROM products"; 
+    try 
     {
-echo<<<PRODUCTS
-        <div class="col-sm-12 col-md-4 col-lg-3">
-            <div class="card">
-              <img src="$row[img_src]" class="card-img-top" alt="product" />
-              <div class="card-body">
-                <h5 class="card-title">$row[product_name]</h5>
-                <p class="card-text">
-                  $row[description]
-                </p>
-                <a href="#" class="btn btn-primary">Zobacz produkt</a>
-              </div>
-            </div>
-          </div>
-PRODUCTS;
+        if ($conn->connect_errno!=0)
+        {
+            throw new Exception(mysqli_connect_errno());
+        }
+        else 
+        {
+          $result = mysqli_query($conn, $sql); 
 
-    }
-  }else if($currentPage == 'searchProducts.php'){
-    while ($row = mysqli_fetch_assoc($result))
-    {
-echo<<<PRODUCTS
+          while ($row = mysqli_fetch_assoc($result))
+          {
+          echo<<<PRODUCTS
           <form action="../scripts/addProductToCart.php" method="post">
             <div class="row productBody">
                     <div class="col-lg-2">
@@ -48,7 +34,14 @@ echo<<<PRODUCTS
               </div>
               </form>
 PRODUCTS;
-    }
-  }
+        }
+        $conn->close();
+      }
+    } 
+    catch (Exception $e)  
+    {
+      echo $e; 
+    } 
+
  
 ?>

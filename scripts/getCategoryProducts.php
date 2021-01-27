@@ -324,23 +324,3 @@ CLOSE;
     
 
 ?>
-<!-- echo<<<PRODUCT
-            <div style = "background-color:beige">
-            <p><b>Id produktu: </b>$p[0]</p>
-            <p><b>Nazwa: </b>$p[1]</p>
-            <p><b>Model: </b>$p[2]</p>
-            <p><b>Cena: </b>$p[3]</p>
-            <p><b>Zdjęcie: </b>$p[4]</p>
-            <p><b>Dostępność: </b>$p[5]</p>
-            <p><b>Waga: </b>$p[6]</p>
-            <p><b>Podkategoria: </b>$p[7]</p>
-            <p><b>Marka: </b>$p[8]</p>
-            <p><b>Opis produktu: </b>$p[9]</p>
-            <p><b>Etykiera sklepu: </b>$p[10]</p>
-            <p><b>Przekątna: </b>$p[11]</p>
-            <p><b>Procesor: </b>$p[12]</p>
-            <p><b>Układ graficzny: </b>$p[13]</p>
-            <p><b>Kolor: </b>$p[14]</p>
-            <p><b>Rozdzielczość: </b>$p[15]</p>
-            <p><b>Nazwa kategorii: </b>$p[16]</p>
-            </div> -->
