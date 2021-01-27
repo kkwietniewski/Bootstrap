@@ -21,7 +21,7 @@
     require_once "../scripts/getNavbar.php";
   ?>
     <div class="container-fluid">
-      <div class="wrapper fadInDown">
+      <div class="wrapper fadeInDown">
         <div id="formContent">
           <form action="../scripts/log.php" method="post">
             <div class="fadeIn first">

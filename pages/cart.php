@@ -48,39 +48,6 @@
               <?php
                 require_once "../scripts/showCart.php";
               ?>
-                <!-- <div class="row">
-                  <div class="col-lg-2">
-                    <img src="../images/product.jpg" alt="" style="width:60px; height:60px;">
-                  </div>
-                  <div class="col-lg-8">
-                    <h6>Nazwa</h6>
-                  </div>
-                  <div class="col-lg-2">
-                    <h6>200zł</h6>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-2">
-                    <img src="../images/product.jpg" alt="" style="width:60px; height:60px;">
-                  </div>
-                  <div class="col-lg-8">
-                    <h6>Nazwa</h6>
-                  </div>
-                  <div class="col-lg-2">
-                    <h6>200zł</h6>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-2">
-                    <img src="../images/product.jpg" alt="" style="width:60px; height:60px;">
-                  </div>
-                  <div class="col-lg-8">
-                    <h6>Nazwa</h6>
-                  </div>
-                  <div class="col-lg-2">
-                    <h6>200zł</h6>
-                  </div>
-                </div> -->
               </div>
               <div class="col-lg-2">
               </div>
@@ -105,7 +72,7 @@
             <div class="row">
               <div class="col-lg-10"></div>
               <div class="col-lg-2">
-                <button class="btn btn-primary" style="width: 100%; color:white;">Zapłać</button>
+                <a href="./order.php" class="btn btn-primary" style="width: 100%; color:white;">Zapłać</a>
               </div>
             </div>
           </div>

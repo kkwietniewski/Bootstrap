@@ -40,7 +40,7 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="./products.php?$name=$cat1"
+                href="./searchProducts.php?$name=$cat1"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -56,21 +56,21 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <a class="dropdown-item" href="./products.php?$subName=$sub1"
+                  <a class="dropdown-item" href="./searchProducts.php?$subName=$sub1"
                   name = $subName
                   value = $sub1
                     >$sub1
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="./products.php?$subName=$sub2"
+                  <a class="dropdown-item" href="./searchProducts.php?$subName=$sub2"
                   name = $subName
                   value = $sub2
                     >$sub2
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="./products.php?$subName=$sub3"
+                  <a class="dropdown-item" href="./searchProducts.php?$subName=$sub3"
                   name = $subName
                   value = $sub3
                     >$sub3
@@ -81,7 +81,7 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="./products.php?$name=$cat2"
+                href="./searchProducts.php?$name=$cat2"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -96,21 +96,21 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <a class="dropdown-item" href="./products.php?$subName=$sub4"
+                  <a class="dropdown-item" href="./searchProducts.php?$subName=$sub4"
                   name = $subName
                   value = $sub4
                     >$sub4
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="./products.php?$subName=$sub5"
+                  <a class="dropdown-item" href="./searchProducts.php?$subName=$sub5"
                   name = $subName
                   value = $sub5
                     >$sub5
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="./products.php?$subName=$sub6"
+                  <a class="dropdown-item" href="./searchProducts.php?$subName=$sub6"
                   name = $subName
                   value = $sub6
                     >$sub6
@@ -121,7 +121,7 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="./products.php?$name=$cat3"
+                href="./searchProducts.php?$name=$cat3"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -137,21 +137,21 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <a class="dropdown-item" href="./products.php?$subName=$sub7"
+                  <a class="dropdown-item" href="./searchProducts.php?$subName=$sub7"
                   name = $subName
                   value = $sub7
                     >$sub7
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="./products.php?$subName=$sub8"
+                  <a class="dropdown-item" href="./searchProducts.php?$subName=$sub8"
                   name = $subName 
                   value = $sub8
                     >$sub8
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="./products.php?$subName=$sub9"
+                  <a class="dropdown-item" href="./searchProducts.php?$subName=$sub9"
                   name = $subName
                   value = $sub9
                     >$sub9

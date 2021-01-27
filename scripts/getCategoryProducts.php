@@ -93,14 +93,238 @@
             echo $e;
         }
 
+        echo<<<OPEN
+        <div class="content">
+OPEN;
+        if (!empty($_GET['category'])){
+            echo<<<BREADCRUMB
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/pages">Strona główna</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">$categoryName</li>
+                </ol>
+            </nav>
+BREADCRUMB;
+        }else if(!empty($_GET['subcategory'])){
+            echo<<<BREADCRUMB
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/pages">Strona główna</a></li>
+                    <li class="breadcrumb-item"><a href="./searchProducts.php?subcategory=$categoryName">$categoryName</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">$categoryName</li>
+                </ol>
+            </nav>
+BREADCRUMB;
+        }
+        echo<<<FILTERS
+        <div class="row">
+            <div class="col-lg-3">
+            <form action="#" method="post">
+                <div class="filters pl-3">
+                <h3>Filtruj</h3>
+                <hr />
+                <div class="producer">
+                    <h5>Producent</h5>
+                    <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="radioProducer1"
+                        id="radioProducer1"
+                        checked
+                    />
+                    <label class="form-check-label" for="radioProducer1">
+                        Default radio
+                    </label>
+                    </div>
+                    <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="radioProducer2"
+                        id="radioProducer2"
+                    />
+                    <label class="form-check-label" for="radioProducer2">
+                        Default radio
+                    </label>
+                    </div>
+                    <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="radioProducer3"
+                        id="radioProducer3"
+                    />
+                    <label class="form-check-label" for="radioProducer3">
+                        Default radio
+                    </label>
+                    </div>
+                    <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="radioProducer4"
+                        id="radioProducer4"
+                    />
+                    <label class="form-check-label" for="radioProducer4">
+                        Default radio
+                    </label>
+                    </div>
+                    <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="radioProducer5"
+                        id="radioProducer5"
+                    />
+                    <label class="form-check-label" for="radioProducer5">
+                        Default radio
+                    </label>
+                    </div>
+                    <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="radioProducer6"
+                        id="radioProducer6"
+                    />
+                    <label class="form-check-label" for="radioProducer6">
+                        Default radio
+                    </label>
+                    </div>
+                </div><!-- producer -->
+                <div class="model">
+                    <h5>Model</h5>
+                    <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="checkModel1"
+                    />
+                    <label class="form-check-label" for="checkModel1">
+                        Default checkbox1
+                    </label>
+                    </div>
+                    <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="checkModel2"
+                    />
+                    <label class="form-check-label" for="checkModel2">
+                        Default checkbox2
+                    </label>
+                    </div>
+                    <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="checkModel3"
+                    />
+                    <label class="form-check-label" for="checkModel3">
+                        Default checkbo3
+                    </label>
+                    </div>
+                    <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="checkModel4"
+                    />
+                    <label class="form-check-label" for="checkModel4">
+                        Default checkbox4
+                    </label>
+                    </div>
+                    <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="checkModel5"
+                    />
+                    <label class="form-check-label" for="checkModel5">
+                        Default checkbox5
+                    </label>
+                    </div>
+                    <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="checkModel6"
+                    />
+                    <label class="form-check-label" for="checkModel6">
+                        Default checkbox6
+                    </label>
+                    </div>
+                </div><!-- model -->
+                <div class="price">
+                <h5>Cena</h5>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control">
+                    <input type="number" class="form-control">
+                    <div class="input-group-append">
+                        <span class="input-group-text">zł</span>
+                    </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit">Wyszukaj</button>
+                </div>
+            </form>
+            </div>
+            <div class="col-lg-9 productsList">
+FILTERS;
+
         echo<<<CATEGORY
-        <div>$categoryName</div>
-        <div>$categoryDescription</div>
+        <div class='productsTitle'>
+            <h3>$categoryName</h3>
+            <p>$categoryDescription</p>
+            <hr>
+        </div>
 CATEGORY;
         
         foreach($productsArray as $p)
         {
-            echo<<<PRODUCT
+        echo<<<PRODUCTS
+                <form action="../scripts/addProductToCart.php" method="post">
+                    <div class="row productBody">
+                            <div class="col-lg-2">
+                            <img src="$p[4]" class="productImg" alt="product" />
+                            </div>
+                            <div class="productText col-lg-8">
+                            <a href = "./product.php?productName=$p[1]" name = "productName" value = "$p[1]"><h5 class="card-title">$p[1]</h5></a>
+                            <p><b>Kod produktu: </b> $p[2]</p>
+                            <p><b>Producent: </b> $p[8]</p>
+                            <p><b>Procesor: </b> $p[12]</p>
+                            <p><b>Układ graficzny: </b> $p[13]</p>
+                            <p><b>Rozdzielczość: </b> $p[15]</p>
+                            <p><b>Kolor: </b> $p[14]</p>
+                            </div>
+                            <div class="extras col-lg-2">
+                            <a type="button" href="#">Sprawdź dostępność</a>
+                            <a type="button" href="#">Porównaj</a>
+                            <button type="input" class="btn btn-primary btnBuy" name="product" value="$p[0]">Dodaj do koszyka</button>
+                            </div>
+                    </div>
+                </form>
+            
+PRODUCTS;
+        }
+        echo<<<CLOSE
+            </div>
+        </div>
+    </div>
+CLOSE;
+    
+    }
+    
+
+?>
+<!-- echo<<<PRODUCT
             <div style = "background-color:beige">
             <p><b>Id produktu: </b>$p[0]</p>
             <p><b>Nazwa: </b>$p[1]</p>
@@ -119,11 +343,4 @@ CATEGORY;
             <p><b>Kolor: </b>$p[14]</p>
             <p><b>Rozdzielczość: </b>$p[15]</p>
             <p><b>Nazwa kategorii: </b>$p[16]</p>
-            </div>
-PRODUCT;
-        }
-    
-    }
-    
-
-?>
+            </div> -->
