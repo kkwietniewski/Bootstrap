@@ -60,19 +60,27 @@
           {
             throw new Exception(mysqli_connect_errno());
           }
-                else 
-                {
-                  if ($conn->query("INSERT INTO `users_data` (`id`, `user_id`, `name`, `surname`, `address`, `post-code`, `city`) VALUES (NULL, '$_SESSION[logged]', '$nameSurname', 'Nogala', '$routeNumber', '12345', '$city')"))
-                  {
-                      echo 'ok';
-                  }
+        else 
+            {
+
+              $sql = sprintf("INSERT INTO `order` VALUES (NULL, $_SESSION[logged], '$nameSurname', '$routeNumber', $postcode, '$city', '$telephone', 'aa', 'bb') "); 
+              if ($result = @$conn->query($sql))
+               {
+               $conn->close();
                }
               }
+            }
+         
+          
         catch(Exception $e)
     {
-      echo $e;
+       echo $e;
         }
+
+        
     }        
 
 }            
+header('Location: ../pages/summary.php'); 
 ?>
+
