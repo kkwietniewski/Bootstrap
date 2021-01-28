@@ -1,4 +1,3 @@
-
 function check(e,value)
 {
     let unicode=e.charCode? e.charCode : e.keyCode;
@@ -31,3 +30,29 @@ function checkLength(fieldId)
         field.value = str;
     }
 }
+let payValue = 0;
+let supplyValue = 0;
+let orderSum = document.querySelector(".orderSum")
+.textContent
+.trimLeft()
+.replace("zł","");
+orderSum = parseFloat(orderSum);
+
+const ratioPay = document.querySelectorAll(".payment>.form-check>input");
+ratioPay.forEach(pay=>{
+    pay.addEventListener("click",()=>{
+        payValue = parseFloat(pay.value);
+        document.querySelector(".showPayment").textContent = payValue+"zł";
+        document.querySelector(".orderSum").textContent = Number((orderSum+payValue+supplyValue).toFixed(2))+"zł";
+    });
+    orderSum += payValue;
+});
+
+const ratioSupply = document.querySelectorAll(".supply>.form-check>input");
+ratioSupply.forEach(supply=>{
+    supply.addEventListener("click",()=>{
+        supplyValue = parseFloat(supply.value);
+        document.querySelector(".showSupply").textContent = supplyValue+"zł";
+        document.querySelector(".orderSum").textContent = Number((orderSum+payValue+supplyValue).toFixed(2))+"zł";
+    });
+});

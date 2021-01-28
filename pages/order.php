@@ -29,7 +29,7 @@
   <body>
   
     <?php
-      // require_once "../scripts/getNavbar.php";
+      require_once "../scripts/getNavbar.php";
     ?>
     <!-- container-fluid-->
     <div class="container-fluid">
@@ -84,15 +84,15 @@
                       <h4>Płatność i dostawa</h4>
                       <div class="col-lg-6 payment">
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" name="paymentRatios" id="paymentRatio1" value="5.00" checked>
+                          <input class="form-check-input" type="radio" name="paymentRatios" id="paymentRatio1" value="5.99">
                           <label class="form-check-label" for="paymentRatio1">
-                            <p>Kartą<i> (5zł)</i></p>
+                            <p>Kartą<i> (5,99zł)</i></p>
                           </label>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" name="paymentRatios" id="paymentRatio2" value="3.00">
+                          <input class="form-check-input" type="radio" name="paymentRatios" id="paymentRatio2" value="3.99">
                           <label class="form-check-label" for="paymentRatio2">
-                          <p>Gotówką<i> (3zł)</i></p>
+                          <p>Gotówką<i> (3,99zł)</i></p>
                           </label>
                         </div>
                         <div class="form-check">
@@ -104,7 +104,7 @@
                       </div>
                       <div class="col-lg-6 supply fadeIn sixth">
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" name="supplyRatios" id="supplyRatio1" value="8.99" checked>
+                          <input class="form-check-input" type="radio" name="supplyRatios" id="supplyRatio1" value="8.99">
                           <label class="form-check-label" for="supplyRatio1">
                           <p>Paczkomat<i> (8,99zł)</i></p>
                           </label>
@@ -136,9 +136,9 @@
                         <h6>Do zapłaty:</h6>
                       </div>
                       <div class="col-2">
-                        <p>5zł</p>
-                        <p>8,99zł</p>
-                        <h6><strong>
+                        <p class="showPayment">0zł</p>
+                        <p class="showSupply">0zł</p>
+                        <h6><strong class="orderSum">
                         <?php 
                           if (!empty($_SESSION['cartCost']))
                           {
