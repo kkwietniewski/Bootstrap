@@ -1,57 +1,21 @@
 <?php
-
+    session_start();
     require_once '../scripts/connect.php';
 
     if(isset($_GET['category']) || isset($_GET['subcategory']) || isset($_GET['producer']) || isset($_GET['model']) 
     || isset($_GET['diagonal']) || isset($_GET['priceFrom']) || isset($_GET['priceTo']))
     {
-        $sql = array(); 
-
-        // if (!empty($_SESSION['category']))
-        // {
-        //     $type = 'category'; 
-        //     unset($_SESSION['category']); 
-        // }
-        // else if (!empty($_SESSION['subcategory']))
-        // {
-        //     $type = 'subcategory';
-        //     unset($_SESSION['subcategory']);
-        // }
-        // else 
-        // {
-        //     $type = "all"; 
-        // }
-
-        
-  
-        //  if(!empty($_POST['model']))
-        // {
-        //     array_push($sql, sprintf("model= '%s' ", $_POST['model']));
-        // }
-        // else if(!empty($_POST['diagonal']))
-        // {
-        //     array_push($sql, sprintf("model= '%s' ", $_POST['diagonal']));
-        // }
-        // else if(!empty($_POST['priceFrom']))
-        // {
-        //     array_push($sql, sprintf("model= '%s' ", $_POST['priceFrom']));
-        // }
-        // else if(!empty($_POST['priceTo']))
-        // {
-        //     array_push($sql, sprintf("model= '%s' ", $_POST['priceTo']));
-        // }
-
-        if (!empty($_GET['subcategory']) )
-        {
-            $subcategory = $_GET['subcategory']; 
-            $value = $_GET['subcategory']; 
-            $name = 'subcategory_name'; 
-        }
-        else if (!empty($_GET['category']))
+        if (!empty($_GET['category']))
         {
             $category = $_GET['category']; 
             $value = $_GET['category']; 
             $name = 'category_name';
+        }
+        else if (!empty($_GET['subcategory']) )
+        {
+            $subcategory = $_GET['subcategory']; 
+            $value = $_GET['subcategory']; 
+            $name = 'subcategory_name'; 
         }
         else if (!empty($_SESSION['subcategory']))
         {
@@ -62,8 +26,8 @@
         else if (!empty($_SESSION['category']))
         {
             $value = $_SESSION['category']; 
-            $name = 'category_name'; 
-            // unset($_SESSION['category']); 
+            $name = 'category_name';  
+            unset($_SESSION['category']);
         }
 
         $query = sprintf("SELECT p.product_id, p.product_name, p.label, p.price, p.img_src, p.availability, p.weight, p.subcategory, 
@@ -84,14 +48,14 @@
         {
             $query = $query.sprintf(" AND p.diagonal = '%s' ", $_GET['diagonal']);
         }
-        // if(!empty($_GET['priceFrom']))
-        // {
-        //     $query = $query.sprintf(" AND p.label = '%s' ", $_GET['model']);
-        // }
-        // if(!empty($_GET['priceTo']))
-        // {
-        //     array_push($sql, sprintf("model= '%s' ", $_GET['priceTo']));
-        // }
+        if(!empty($_GET['priceFrom']))
+        {
+            $query = $query.sprintf(" AND p.price> %d ", $_GET['priceFrom']);
+        }
+        if(!empty($_GET['priceTo']))
+        {
+            $query = $query.sprintf(" AND p.price< %d ", $_GET['priceTo']);
+        }
 
         $productsArray = array();
         $brands = array();
@@ -110,10 +74,18 @@
                     if (!empty($subcategory))
                     {
                         $_SESSION['subcategory'] = $subcategory;
+                        if (isset($_SESSION['category']))
+                        {
+                            unset($_SESSION['category']); 
+                        }
                     }
                     else if (!empty($category))
                     {
                         $_SESSION['category'] = $category; 
+                        if (isset($_SESSION['subcategory']))
+                        {
+                            unset($_SESSION['subcategory']); 
+                        }
                     }
 
                     while ($row = mysqli_fetch_assoc($result))
@@ -181,7 +153,7 @@
         echo<<<OPEN
         <div class="content">
 OPEN;
-echo $query; 
+// echo $query; 
         if (!empty($_GET['category'])){
             echo<<<BREADCRUMB
             <nav aria-label="breadcrumb">
