@@ -1,157 +1,182 @@
 <?php
-    session_start();
-    require_once '../scripts/connect.php';
+session_start();
+require_once '../scripts/connect.php';
 
-    if(isset($_GET['category']) || isset($_GET['subcategory']) || isset($_GET['producer']) || isset($_GET['model']) 
-    || isset($_GET['diagonal']) || isset($_GET['priceFrom']) || isset($_GET['priceTo']))
+if(isset($_GET['category']) || isset($_GET['subcategory']) || isset($_GET['producer']) || isset($_GET['model']) 
+|| isset($_GET['diagonal']) || isset($_GET['priceFrom']) || isset($_GET['priceTo']))
+{
+if (!empty($_GET['category']))
+{
+    $category = $_GET['category']; 
+    $value = $_GET['category']; 
+    $name = 'category_name';
+}
+else if (!empty($_GET['subcategory']) )
+{
+    $subcategory = $_GET['subcategory']; 
+    $value = $_GET['subcategory']; 
+    $name = 'subcategory_name'; 
+}
+else if (!empty($_SESSION['subcategory']))
+{
+    $value = $_SESSION['subcategory']; 
+    $name = 'subcategory_name'; 
+    // unset($_SESSION['subcategory']);
+}
+else if (!empty($_SESSION['category']))
+{
+    $value = $_SESSION['category']; 
+    $name = 'category_name';  
+    // unset($_SESSION['category']);
+}
+
+$query = sprintf("SELECT p.product_id, p.product_name, p.label, p.price, p.img_src, p.availability, p.weight, p.subcategory, 
+p.brand, p.description AS productDescription, p.store_label, p.diagonal, p.processor, p.graphic, p.color, p.resolution, 
+c.category_name, c.description AS categoryDescription, s.subcategory_name, s.subcategory_description FROM products AS p 
+JOIN subcategory AS s ON p.subcategory = s.subcategory_id JOIN category AS c ON s.category_id = c.category_id 
+WHERE $name='%s' ",  mysqli_real_escape_string($conn,$value));  
+if (!empty($_GET['producer']))
+{
+    $query = $query.sprintf(" AND p.brand = '%s' ", $_GET['producer']); 
+    
+}
+if(!empty($_GET['model']))
+{
+    $query = $query.sprintf(" AND p.label = '%s' ", $_GET['model']);
+}
+if(!empty($_GET['diagonal']))
+{
+    $query = $query.sprintf(" AND p.diagonal = '%s' ", $_GET['diagonal']);
+}
+if(!empty($_GET['priceFrom']))
+{
+    $query = $query.sprintf(" AND p.price> %d ", $_GET['priceFrom']);
+}
+if(!empty($_GET['priceTo']))
+{
+    $query = $query.sprintf(" AND p.price< %d ", $_GET['priceTo']);
+}
+if(!empty($_GET['sort']))
+{
+    $sort = $_GET['sort']; 
+
+    if ($sort == 'priceAsc')
     {
-        if (!empty($_GET['category']))
-        {
-            $category = $_GET['category']; 
-            $value = $_GET['category']; 
-            $name = 'category_name';
-        }
-        else if (!empty($_GET['subcategory']) )
-        {
-            $subcategory = $_GET['subcategory']; 
-            $value = $_GET['subcategory']; 
-            $name = 'subcategory_name'; 
-        }
-        else if (!empty($_SESSION['subcategory']))
-        {
-            $value = $_SESSION['subcategory']; 
-            $name = 'subcategory_name'; 
-            unset($_SESSION['subcategory']);
-        }
-        else if (!empty($_SESSION['category']))
-        {
-            $value = $_SESSION['category']; 
-            $name = 'category_name';  
-            unset($_SESSION['category']);
-        }
+        $query = $query.sprintf(" ORDER BY p.price"); 
+    }
+    if ($sort == 'priceDesc')
+    {
+        $query = $query.sprintf(" ORDER BY p.price DESC"); 
+    }
+    else if ($sort == 'nameAsc')
+    {
+        $query = $query.sprintf(" ORDER BY p.product_name"); 
+    }
+    else if ($sort == 'nameDesc')
+    {
+        $query = $query.sprintf(" ORDER BY p.product_name DESC"); 
+    }
+}
+else {
+    $query = $query.sprintf(" ORDER BY p.price");
+}
 
-        $query = sprintf("SELECT p.product_id, p.product_name, p.label, p.price, p.img_src, p.availability, p.weight, p.subcategory, 
-        p.brand, p.description AS productDescription, p.store_label, p.diagonal, p.processor, p.graphic, p.color, p.resolution, 
-        c.category_name, c.description AS categoryDescription, s.subcategory_name, s.subcategory_description FROM products AS p 
-        JOIN subcategory AS s ON p.subcategory = s.subcategory_id JOIN category AS c ON s.category_id = c.category_id 
-        WHERE $name='%s' ",  mysqli_real_escape_string($conn,$value));  
-        if (!empty($_GET['producer']))
-        {
-            $query = $query.sprintf(" AND p.brand = '%s' ", $_GET['producer']); 
-           
-        }
-        if(!empty($_GET['model']))
-        {
-            $query = $query.sprintf(" AND p.label = '%s' ", $_GET['model']);
-        }
-        if(!empty($_GET['diagonal']))
-        {
-            $query = $query.sprintf(" AND p.diagonal = '%s' ", $_GET['diagonal']);
-        }
-        if(!empty($_GET['priceFrom']))
-        {
-            $query = $query.sprintf(" AND p.price> %d ", $_GET['priceFrom']);
-        }
-        if(!empty($_GET['priceTo']))
-        {
-            $query = $query.sprintf(" AND p.price< %d ", $_GET['priceTo']);
-        }
+$productsArray = array();
+$brands = array();
+$diagonals = array();
 
-        $productsArray = array();
-        $brands = array();
-        $diagonals = array();
-
-        try 
+try 
+{
+    if ($conn->connect_errno!=0)
+    {
+        throw new Exception(mysqli_connect_errno());
+    }
+    else 
+    {
+        if ($result = @$conn->query($query))
         {
-            if ($conn->connect_errno!=0)
+            if (!empty($subcategory))
             {
-                throw new Exception(mysqli_connect_errno());
-            }
-            else 
-            {
-                if ($result = @$conn->query($query))
+                $_SESSION['subcategory'] = $subcategory;
+                if (isset($_SESSION['category']))
                 {
-                    if (!empty($subcategory))
-                    {
-                        $_SESSION['subcategory'] = $subcategory;
-                        if (isset($_SESSION['category']))
-                        {
-                            unset($_SESSION['category']); 
-                        }
-                    }
-                    else if (!empty($category))
-                    {
-                        $_SESSION['category'] = $category; 
-                        if (isset($_SESSION['subcategory']))
-                        {
-                            unset($_SESSION['subcategory']); 
-                        }
-                    }
-
-                    while ($row = mysqli_fetch_assoc($result))
-                    {
-                        $product = array();
-                        //0 - Id produktu
-                        array_push($product, $row['product_id']);
-                        //1 - Nazwa produktu
-                        array_push($product, $row['product_name']);
-                        //2 - Model produktu
-                        array_push($product, $row['label']);
-                        //3 - Cena
-                        array_push($product, $row['price']);
-                        //4 - Zdjęcie
-                        array_push($product, $row['img_src']);
-                        //5 - Dostępność
-                        array_push($product, $row['availability']);
-                        //6 - Waga
-                        array_push($product, $row['weight']);
-                        //7 - Podkategoria
-                        array_push($product, $row['subcategory']);
-                        //8 - Marka
-                        array_push($product, $row['brand']);
-                        array_push($brands, $row['brand']);
-                        //9 - Opis produktu
-                        array_push($product, $row['productDescription']);
-                        //10 - Etykieta sklepu
-                        array_push($product, $row['store_label']);
-                        //11 - Przekątna
-                        array_push($product, $row['diagonal']);
-                        array_push($diagonals, $row['diagonal']); 
-                        //12 - Procesor
-                        array_push($product, $row['processor']);
-                        //13 - Układ graficzny
-                        array_push($product, $row['graphic']);
-                        //14 - Kolor
-                        array_push($product, $row['color']);
-                        //15 - Rozdzielczość
-                        array_push($product, $row['resolution']);
-                        //16 - Nazwa kategorii
-                        array_push($product, $row[$name]);
-                        //17 - Opis kategorii
-                        $categoryDescription = $row['categoryDescription'];
-                        $categoryName = $row[$name];
-                        //18 - Nazwa podkategorii
-                        array_push($product, $row['subcategory_name']); 
-                        //19 - Opis podkategorii
-                        array_push($product, $row['subcategory_description']); 
-
-                        array_push($productsArray, $product); 
-                         
-
-                    }
+                    unset($_SESSION['category']); 
                 }
             }
-                
-           $brands = array_unique($brands); 
-            $conn->close();
+            else if (!empty($category))
+            {
+                $_SESSION['category'] = $category; 
+                if (isset($_SESSION['subcategory']))
+                {
+                    unset($_SESSION['subcategory']); 
+                }
+            }
+
+            while ($row = mysqli_fetch_assoc($result))
+            {
+                $product = array();
+                //0 - Id produktu
+                array_push($product, $row['product_id']);
+                //1 - Nazwa produktu
+                array_push($product, $row['product_name']);
+                //2 - Model produktu
+                array_push($product, $row['label']);
+                //3 - Cena
+                array_push($product, $row['price']);
+                //4 - Zdjęcie
+                array_push($product, $row['img_src']);
+                //5 - Dostępność
+                array_push($product, $row['availability']);
+                //6 - Waga
+                array_push($product, $row['weight']);
+                //7 - Podkategoria
+                array_push($product, $row['subcategory']);
+                //8 - Marka
+                array_push($product, $row['brand']);
+                array_push($brands, $row['brand']);
+                //9 - Opis produktu
+                array_push($product, $row['productDescription']);
+                //10 - Etykieta sklepu
+                array_push($product, $row['store_label']);
+                //11 - Przekątna
+                array_push($product, $row['diagonal']);
+                array_push($diagonals, $row['diagonal']); 
+                //12 - Procesor
+                array_push($product, $row['processor']);
+                //13 - Układ graficzny
+                array_push($product, $row['graphic']);
+                //14 - Kolor
+                array_push($product, $row['color']);
+                //15 - Rozdzielczość
+                array_push($product, $row['resolution']);
+                //16 - Nazwa kategorii
+                array_push($product, $row[$name]);
+                //17 - Opis kategorii
+                $categoryDescription = $row['categoryDescription'];
+                $categoryName = $row[$name];
+                //18 - Nazwa podkategorii
+                array_push($product, $row['subcategory_name']); 
+                //19 - Opis podkategorii
+                array_push($product, $row['subcategory_description']); 
+
+                array_push($productsArray, $product); 
+                    
+
+            }
         }
-        catch (Exception $e)
-        {
-            echo $e;
-        }
-       
-        echo<<<OPEN
-        <div class="content">
+    }
+        
+    $brands = array_unique($brands); 
+    $diagonals = array_unique($diagonals); 
+    $conn->close();
+}
+catch (Exception $e)
+{
+    echo $e;
+}
+
+echo<<<OPEN
+<div class="content">
 OPEN;
 // echo $query; 
         if (!empty($_GET['category'])){
@@ -182,6 +207,15 @@ BREADCRUMB;
                 <div class="filters pl-3">
                 <h3>Filtruj</h3>
                 <hr />
+                <div class = "sort">
+                    <h5>Sortuj</h5>
+                    <select class="form-select" name = "sort">
+                        <option value = "priceAsc">Po cenie rosnąco</option>
+                        <option value="priceDesc">Po cenie malejąco</option>
+                        <option value="nameAsc">Po nazwie rosnąco</option>
+                        <option value="nameDesc">Po nazwie malejąco</option>
+                    </select>
+                </div>
                 <div class="producer">
                     <h5>Producent</h5>
 PRODUCER;
@@ -206,7 +240,7 @@ MODEL;
                     echo<<<MODEL
                     <div class="form-check">
                         <input class="form-check-input" name="model" value= "$p[2]" type="radio" id="radioModel$index"/>
-                        <label class="form-check-label" for="radioModel$index">$p[1] - $p[2]</label>
+                        <label class="form-check-label" for="radioModel$index">$p[2]</label>
                     </div>
 MODEL;
                 }

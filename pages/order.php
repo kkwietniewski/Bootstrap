@@ -1,10 +1,20 @@
 <?php
   session_start();
 
+  $_SESSION['cost'] = $_SESSION['cartCost']; 
   if (!isset($_SESSION['logged']))
   {
     $_SESSION['error'] = "Przed dokonaniem zakupu proszę się zalogować!"; 
     header('Location: ./login.php'); 
+  }
+
+  if (isset($_SESSION['product_counter']))
+  {
+    if ($_SESSION['product_counter'] ==0)
+    {
+      header ('Location: ./cart.php'); 
+      $_SESSION['isCartEmpty'] = "Dodaj produkty!"; 
+    }
   }
 ?>
 <!DOCTYPE html>
@@ -19,7 +29,7 @@
   <body>
   
     <?php
-      require_once "../scripts/getNavbar.php";
+      // require_once "../scripts/getNavbar.php";
     ?>
     <!-- container-fluid-->
     <div class="container-fluid">
@@ -64,9 +74,9 @@
                     <div>
                       <input class="regInp fadeIn fourth" name="city" type="text" placeholder="Podaj miasto"  onInput="checkLength(city)"/>
                     </div>
-                    <div>
-                      <input class="regInp fadeIn fifth" name="email" type="text" placeholder="Podaj email"/>
-                    </div>
+                    <?php
+                      require_once '../scripts/getUserData.php';
+                    ?>
                     <div>
                       <input class="regInp fadeIn sixth" name="telephone" type="number" placeholder="Podaj telefon" onKeyPress="return check(event,value)" onInput="checkLength(telephone)"/>
                     </div>
@@ -118,12 +128,8 @@
               </div>
               <div class="col-lg-5">
                 <div class="payContainer">
-                    <h4>Wybrane produkty</h4>
-                    <?php
-                  require_once "../scripts/showCart.php";
-                    ?>
-                    <hr>
-                    <div class="row">
+
+                    <div class="row mt-2">
                       <div class="col-10">
                         <p>Forma płatności</p>
                         <p>Dostawa</p>
@@ -132,8 +138,9 @@
                       <div class="col-2">
                         <p>5zł</p>
                         <p>8,99zł</p>
-                        <h6><strong><?php 
-                          if (isset($_SESSION['cartCost']))
+                        <h6><strong>
+                        <?php 
+                          if (!empty($_SESSION['cartCost']))
                           {
                             echo $_SESSION['cartCost'],'zł';
                           } 

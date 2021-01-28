@@ -48,7 +48,18 @@
               <div class="cartProducts col-lg-10">
               
               <?php
-                require_once "../scripts/showCart.php";
+                if (!empty($_SESSION['isCartEmpty']))
+                {
+                  echo<<<ALERT
+                  <div class = "text-center my-2">
+                   $_SESSION[isCartEmpty]
+                  </div>
+ALERT;
+                  unset($_SESSION['isCartEmpty']); 
+                } else 
+                {
+                  require_once "../scripts/showCart.php";
+                }                
               ?>
               </div>
               <div class="col-lg-2">

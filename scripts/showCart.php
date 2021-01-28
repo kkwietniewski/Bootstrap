@@ -1,5 +1,6 @@
 <?php
 
+  session_start();
     require_once '../scripts/cartProducts.php'; 
     $sum = 0;
 

@@ -3,7 +3,7 @@
     
   require_once './connect.php';
 
-  if (isset($_POST['nameSurname']) && isset($_POST['routeNumber']) && isset($_POST['postcode']) && isset($_POST['city']) && isset($_POST['email']) && isset($_POST['telephone']) && isset($_POST['paymentRatios']) && isset($_POST['supplyRatios']))
+  if (isset($_POST['nameSurname']) && isset($_POST['routeNumber']) && isset($_POST['postcode']) && isset($_POST['city']) && isset($_POST['telephone']) && isset($_POST['paymentRatios']) && isset($_POST['supplyRatios']))
   {
     $nameSurname = $_POST['nameSurname'];
     $routeNumber = $_POST['routeNumber'];
@@ -13,9 +13,12 @@
     $telephone = $_POST['telephone'];
     $paymentValue = $_POST['paymentRatios'];
     $supplyValue = $_POST['supplyRatios'];
+
+    $_SESSION['cartCost'] += $paymentValue; 
+    $_SESSION['cartCost'] += $supplyValue; 
   }
 
-  if ($nameSurname == null || $routeNumber == null || $postcode == null || $city == null || $email == null || $telephone == null || $paymentValue == null || $supplyValue == null)
+  if ($nameSurname == null || $routeNumber == null || $postcode == null || $city == null || $telephone == null || $paymentValue == null || $supplyValue == null)
   {
       $_SESSION['error'] = "Uzupełnij wszystkie dane"; 
       header ('Location: ../pages/order.php');
@@ -42,11 +45,6 @@
       $_SESSION['error'] = "Długość nazwy miasta powinna wynosić od 3 - 15 znaków!"; 
       header ('Location: ../pages/order.php');
     }
-    else if (!filter_var($email, FILTER_VALIDATE_EMAIL))
-    {
-        $_SESSION['error'] = "Podaj poprawny e-mail!"; 
-        header('Location: ../pages/order.php'); 
-    }
     else if (strlen($telephone) < 9)
     {
       $_SESSION['error'] = "Długość numeru telefonu powinna równa 9 cyfom!"; 
@@ -61,25 +59,15 @@
           if ($conn->connect_errno!=0)
           {
             throw new Exception(mysqli_connect_errno());
-                }
+          }
                 else 
                 {
-                    if ($result = @$conn->query(sprintf("SELECT * FROM users WHERE email ='%s'", $email)))
-                    {
-                        $users = $result->num_rows;
-                        if ($users == 0)
-                        {
-                            $_SESSION['error'] = "Nie ma użytkowanika o takim emailu!"; 
-                            header ('Location: ../pages/order.php'); 
-                        }
-                        else {
-                            
-                            $_SESSION['ordered'] = "Zamówienie zostało złożone!"; 
-                            header ('Location: ../pages/order.php');
-                        }
-                    } 
-                }
-          }
+                  if ($conn->query("INSERT INTO `users_data` (`id`, `user_id`, `name`, `surname`, `address`, `post-code`, `city`) VALUES (NULL, '$_SESSION[logged]', '$nameSurname', 'Nogala', '$routeNumber', '12345', '$city')"))
+                  {
+                      echo 'ok';
+                  }
+               }
+              }
         catch(Exception $e)
     {
       echo $e;

@@ -1,5 +1,5 @@
 <?php
-    
+    session_start();
     require_once '../scripts/connect.php';
 
     if (empty($_GET['productName']))

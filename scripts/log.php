@@ -1,5 +1,5 @@
 <?php
-
+    
     session_start();
    
     require_once './connect.php';
@@ -34,8 +34,8 @@
                 if ($login == $dbLogin && password_verify($pass, $dbPass))
                 {
                     
-                    $_SESSION["product_counter"] = 0;
-                    $_SESSION['logged'] = true;
+                    session_unset();
+                    $_SESSION['logged'] = $line['user_id'];
                     $conn->close();
                     header('Location: ../pages/index.php'); 
                 }

@@ -1,4 +1,5 @@
 <?php
+  session_start();
     require_once '../scripts/connect.php'; 
     
     $sql = "SELECT * FROM products"; 
