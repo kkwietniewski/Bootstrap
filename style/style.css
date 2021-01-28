@@ -7103,6 +7103,14 @@ body {
   font-weight: 400;
   font-size: 13px; }
 
+.extras {
+  display: flex;
+  flex-direction: column;
+  text-align: center; }
+
+.extras > button {
+  color: var(--text-color); }
+
 .breadcrumb-item + .breadcrumb-item::before {
   color: var(--text-color); }
 
@@ -7193,53 +7201,6 @@ body {
 .table-hover {
   background-color: white;
   text-align: center; }
-
-.productOpinions {
-  padding: 3%; }
-
-.addOpinion {
-  border-left: 1px solid currentColor;
-  text-align: center;
-  position: relative; }
-
-.addOpinion .rating input {
-  display: none; }
-
-.rating {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between; }
-
-.rating > label {
-  transition: all 0.2s ease; }
-
-input > #rate-5 ~ label {
-  padding-right: 8%;
-  cursor: pointer; }
-
-.rating input:not(:checked) ~ label:hover,
-.rating input:not(:checked) ~ label:hover ~ label {
-  color: var(--bs-primary); }
-
-input:checked ~ label {
-  color: var(--bs-primary); }
-
-form .textarea {
-  height: 100%;
-  width: 100%;
-  overflow: hidden; }
-
-form .textarea textarea {
-  height: 100%;
-  width: 100%;
-  outline: none;
-  background-color: var(--navbar-color);
-  color: var(--text-color);
-  padding: 20px;
-  resize: none; }
-
-.addOpinion > form {
-  display: none; }
 
 .cartBody > .row > .row > .col-lg-8 > form > .row {
   padding-top: 1rem; }

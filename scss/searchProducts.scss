@@ -29,6 +29,14 @@
   font-weight: 400;
   font-size: 13px;
 }
+.extras{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.extras>button{
+  color: var(--text-color);
+}
 .breadcrumb-item + .breadcrumb-item::before{
   color: var(--text-color);
 }

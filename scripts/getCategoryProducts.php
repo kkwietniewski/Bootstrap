@@ -205,8 +205,8 @@ MODEL;
                 {
                     echo<<<MODEL
                     <div class="form-check">
-                        <input class="form-check-input" name="model" value= "$p[2]" type="checkbox" id="checkModel$index"/>
-                        <label class="form-check-label" for="$index">$p[1] - $p[2]</label>
+                        <input class="form-check-input" name="model" value= "$p[2]" type="radio" id="radioModel$index"/>
+                        <label class="form-check-label" for="radioModel$index">$p[1] - $p[2]</label>
                     </div>
 MODEL;
                 }
@@ -219,8 +219,8 @@ DIAGONAL;
                 {
                     echo<<<DIAGONAL
                     <div class="form-check">
-                        <input class="form-check-input" name="diagonal" value= "$p" type="checkbox" id="checkModel$index"/>
-                        <label class="form-check-label" for="$index">$p"</label>
+                        <input class="form-check-input" name="diagonal" value= "$p" type="radio" id="radioDiagonal$index"/>
+                        <label class="form-check-label" for="radioDiagonal$index">$p"</label>
                     </div>
 DIAGONAL;
                 }
@@ -229,8 +229,8 @@ DIAGONAL;
                 <div class="price">
                 <h5>Cena</h5>
                 <div class="input-group mb-3">
-                    <input type="number" class="form-control" name="priceFrom">
-                    <input type="number" class="form-control" name="priceTo">
+                    <input type="number" class="form-control" name="priceFrom" placeholder="Od">
+                    <input type="number" class="form-control" name="priceTo" placeholder="Do">
                     <div class="input-group-append">
                         <span class="input-group-text">zł</span>
                     </div>
@@ -269,8 +269,7 @@ CATEGORY;
                             <p><b>Kolor: </b> $p[14]</p>
                             </div>
                             <div class="extras col-lg-2">
-                            <a type="button" href="#">Sprawdź dostępność</a>
-                            <a type="button" href="#">Porównaj</a>
+                            <h4>$p[3] zł</h4>
                             <button type="input" class="btn btn-primary btnBuy" name="product" value="$p[0]">Dodaj do koszyka</button>
                             </div>
                     </div>
