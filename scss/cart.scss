@@ -22,9 +22,12 @@
   padding-top: 2%;
   text-align: center;
 }
-.cartProducts>.productsRow{
+.productsRow{
   padding: 2%;
   border-bottom: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .titleRow{
   padding: 2% 2% 0% 2%;

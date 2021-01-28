@@ -22,7 +22,7 @@
         <h6>$product[3] zł</h6>
       </div>
       <div class = "col-lg-1">
-      <form action = "../scripts/deleteFromCart.php" method = "post"> <button type = "input" name = "product" value = "$product[0]">X</button></form>
+      <form action = "../scripts/deleteFromCart.php" method = "post"> <button type = "input" class="btn-close" aria-label="Close" name = "product" value = "$product[0]"></button></form>
       </div>      
     </div>
 CART;
