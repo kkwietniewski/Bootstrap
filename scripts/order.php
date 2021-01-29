@@ -14,8 +14,37 @@
     $paymentValue = $_POST['paymentRatios'];
     $supplyValue = $_POST['supplyRatios'];
 
+
     $_SESSION['cartCost'] += $paymentValue; 
     $_SESSION['cartCost'] += $supplyValue; 
+
+    if ($paymentValue == 5.99)
+    {
+      $paymentValue = 'Karta'; 
+    }
+    else if ( $paymentValue == 3.99)
+    {
+      $paymentValue = 'Gotówka';
+    }
+    else
+    {
+      $paymentValue = 'BLIK'; 
+    }
+
+    if ($supplyValue == 8.99)
+    {
+      $supplyValue = 'Paczkomat'; 
+    }
+    else if ($supplyValue == 14.99)
+    {
+      $supplyValue = 'Kurier';
+    }
+    else {
+      $supplyValue = 'Odbiór osobisty'; 
+    }
+
+
+   
   }
 
   if ($nameSurname == null || $routeNumber == null || $postcode == null || $city == null || $telephone == null || $paymentValue == null || $supplyValue == null)
@@ -53,20 +82,20 @@
     else
     {
         require_once "connect.php"; 
-
+        
         try 
         {
           if ($conn->connect_errno!=0)
           {
             throw new Exception(mysqli_connect_errno());
           }
-        else 
+          else 
+          {
+            
+            $sql = sprintf("INSERT INTO `order` VALUES (NULL, $_SESSION[logged], $_SESSION[cartCost], '$nameSurname', '$routeNumber', $postcode, '$city', '$telephone', '$paymentValue', '$supplyValue') "); 
+            if ($result = @$conn->query($sql))
             {
-
-              $sql = sprintf("INSERT INTO `order` VALUES (NULL, $_SESSION[logged], $_SESSION[cartCost], '$nameSurname', '$routeNumber', $postcode, '$city', '$telephone', 'aa', 'bb') "); 
-              if ($result = @$conn->query($sql))
-               {
-                //  echo 'Dodano'; 
+                
               }
               $conn->close();
               }
