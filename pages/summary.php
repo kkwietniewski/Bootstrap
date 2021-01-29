@@ -46,6 +46,10 @@
     <!-- container-fluid-->
 
     <script src="../scripts/script.js"></script>
-    <script src="../scripts/order.js"></script>
+    <script>
+      window.addEventListener("load", ()=>{
+        document.querySelector(".badge-light").textContent = 0;
+      });
+    </script>
   </body>
 </html>

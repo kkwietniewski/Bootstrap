@@ -23,6 +23,10 @@
         $_SESSION['cart'] = $updateCart; 
         $_SESSION['product_counter'] = $_SESSION['product_counter'] - $count;
     }
+
+    if($_SESSION['product_counter'] == 0){
+        $_SESSION['cartCost'] = 0;
+    }
      
    header ('Location: ../pages/cart.php');
 

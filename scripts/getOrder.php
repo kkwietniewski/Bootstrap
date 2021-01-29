@@ -3,6 +3,7 @@
     session_start();
     require_once '../scripts/connect.php'; 
 
+    $cost = $_SESSION['cartCost'];
     if (!empty($_SESSION['order']))
     {
         $orderId = $_SESSION['order']; 
@@ -114,7 +115,7 @@ PRODUCTS;
                     <p><i>Forma płatności <b>$payment_type</b></i></p>
                 </div>
                 <div class="col-lg-6">
-                    <h4 style="text-align:right;">Łączny koszt: <b>$_SESSION[cartCost]zł</b></h4><b>
+                    <h4 style="text-align:right;">Łączny koszt: <b>$cost zł</b></h4><b>
                            
                 </div>
             </div>
@@ -138,7 +139,4 @@ USERDATA;
     
 
     }
-
-    // unset($_SESSION['cart']);
-    // $_SESSION['product_counter'] = 0;
 ?>
