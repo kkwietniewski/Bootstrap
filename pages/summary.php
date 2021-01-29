@@ -35,7 +35,8 @@
                     <div class="fadeIn first">
                       <h4>Kupiłeś</h4>
                       <?php
-                        require_once "../scripts/orderedProducts.php";
+                        //require_once "../scripts/orderedProducts.php";
+                        require_once "../scripts/getOrder.php"; 
                         
                       ?>
                       <h4 style="text-align:right;">Łączny koszt: <b><?php

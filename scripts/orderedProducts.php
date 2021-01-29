@@ -87,6 +87,7 @@
    
 }
 
+header('Location: ../pages/summary.php'); 
 ?>
 
 <!-- 

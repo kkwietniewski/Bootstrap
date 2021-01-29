@@ -81,6 +81,6 @@
     }        
 
 }            
-header('Location: ../pages/summary.php'); 
+header('Location: ./orderedProducts.php'); 
 ?>
 
