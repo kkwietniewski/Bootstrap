@@ -63,11 +63,12 @@
         else 
             {
 
-              $sql = sprintf("INSERT INTO `order` VALUES (NULL, $_SESSION[logged], '$nameSurname', '$routeNumber', $postcode, '$city', '$telephone', 'aa', 'bb') "); 
+              $sql = sprintf("INSERT INTO `order` VALUES (NULL, $_SESSION[logged], $_SESSION[cartCost], '$nameSurname', '$routeNumber', $postcode, '$city', '$telephone', 'aa', 'bb') "); 
               if ($result = @$conn->query($sql))
                {
-               $conn->close();
-               }
+                //  echo 'Dodano'; 
+              }
+              $conn->close();
               }
             }
          
@@ -80,7 +81,7 @@
         
     }        
 
+    header('Location: ./orderedProducts.php'); 
 }            
-header('Location: ./orderedProducts.php'); 
 ?>
 
