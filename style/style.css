@@ -7124,7 +7124,7 @@ body {
   min-height: 900px; }
 
 .cartBody {
-  padding: 6% 4% 2% 4%;
+  padding: 4% 4% 2% 4%;
   margin-top: 5.5rem;
   background-color: #fff;
   box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
@@ -7220,6 +7220,15 @@ body {
 
 .payContainer > .row > .col-2 > p {
   text-align: right; }
+
+.summaryTitle > .row > .col-lg-3, .summaryProducts > .row > .col-lg-3 {
+  text-align: center; }
+
+.summaryProducts {
+  padding-top: 2%; }
+
+.userData {
+  padding-top: 2%; }
 
 .navbar-nav {
   margin-right: auto; }
