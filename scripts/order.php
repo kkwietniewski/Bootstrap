@@ -95,7 +95,7 @@
             $sql = sprintf("INSERT INTO `order` VALUES (NULL, $_SESSION[logged], $_SESSION[cartCost], '$nameSurname', '$routeNumber', $postcode, '$city', '$telephone', '$paymentValue', '$supplyValue') "); 
             if ($result = @$conn->query($sql))
             {
-                
+                // echo 'ok';
               }
               $conn->close();
               }

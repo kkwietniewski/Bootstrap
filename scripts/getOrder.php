@@ -120,6 +120,23 @@ PRODUCTS;
             </div>
         
 USERDATA;
+
+        if (isset($_SESSION['cart']))
+        {
+            unset($_SESSION['cart']); 
+        }
+        if (isset($_SESSION['product_counter']))
+        {
+            $_SESSION['product_counter'] = 0; 
+        }
+
+        if (isset($_SESSION['cartCoset']))
+        {
+            unset($_SESSION['cartCost']); 
+        }
+
+    
+
     }
 
     // unset($_SESSION['cart']);
