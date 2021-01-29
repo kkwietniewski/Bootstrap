@@ -48,11 +48,12 @@
               <div class="cartProducts col-lg-10">
               
               <?php
-                if (!empty($_SESSION['isCartEmpty']))
+                
+                if (!empty($_SESSION['isCartEmpty']) || $_SESSION['product_counter'] ==0)
                 {
                   echo<<<ALERT
                   <div class = "text-center my-2">
-                   $_SESSION[isCartEmpty]
+                   Brak produktów w koszyku!
                   </div>
 ALERT;
                   unset($_SESSION['isCartEmpty']); 
