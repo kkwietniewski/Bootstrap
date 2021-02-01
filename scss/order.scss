@@ -1,0 +1,19 @@
+.cartBody>.row>.row>.col-lg-8>form>.row{
+  padding-top: 1rem;
+}
+.payButton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.payButton button{
+  margin-top: 0.5rem;
+  color: white;
+  width: 90%;
+}
+.payContainer>h4{
+  padding-bottom: 0.5rem;
+}
+.payContainer>.row>.col-2>p{
+  text-align: right;
+}

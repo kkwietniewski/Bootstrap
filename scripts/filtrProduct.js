@@ -10,12 +10,12 @@ btnShowMore.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" heig
 
 producerRadios.forEach((radio,index) => {
   if(index > 3) radio.classList.add("d-none");
-  if(index == producerRadios.length-1) document.querySelector(".producer").appendChild(btnShowMore)
+  if(index == producerRadios.length-1 && producerRadios.length > 4) document.querySelector(".producer").appendChild(btnShowMore)
 });
 const btnShowMore2 = btnShowMore.cloneNode(true);
 modelChecks.forEach((check,index) => {
   if(index > 3) check.classList.add("d-none");
-  if(index == modelChecks.length-1) document.querySelector(".model").appendChild(btnShowMore2)
+  if(index == modelChecks.length-1 && producerRadios.length > 4) document.querySelector(".model").appendChild(btnShowMore2)
 });
 
 btnShowMore.addEventListener("click", ()=>{

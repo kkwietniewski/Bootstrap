@@ -21,7 +21,7 @@
     require_once "../scripts/getNavbar.php";
   ?>
     <div class="container-fluid">
-      <div class="wrapper fadInDown">
+      <div class="wrapper fadeInDown">
         <div id="formContent">
           <form action="../scripts/log.php" method="post">
             <div class="fadeIn first">
@@ -58,12 +58,7 @@
           </form>
           <div id="formFooter">
             <div class="row">
-              <div class="col-sm-12 col-md-6 col-lg-6 p-4">
-                <a class="underlineHover" href="./odzyskajHaslo.php"
-                  >Odzyskaj hasło</a
-                >
-              </div>
-              <div class="col-sm-12 col-md-6 col-lg-6 p-4">
+              <div class="col-sm-12 col-md-12 col-lg-12 p-4">
                 <a class="underlineHover" href="./registration.php">Zarejestuj się</a>
               </div>
             </div>

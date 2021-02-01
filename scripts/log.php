@@ -1,5 +1,5 @@
 <?php
-
+    
     session_start();
    
     require_once './connect.php';
@@ -33,7 +33,9 @@
                 $dbPass = $line['password']; 
                 if ($login == $dbLogin && password_verify($pass, $dbPass))
                 {
-                    $_SESSION['logged'] = true;
+                    
+                    session_unset();
+                    $_SESSION['logged'] = $line['user_id'];
                     $conn->close();
                     header('Location: ../pages/index.php'); 
                 }

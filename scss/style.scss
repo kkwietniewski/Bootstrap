@@ -11,6 +11,7 @@ $body-bg: #6a707c;
 $link-color: var(--text-color);
 $link-hover-color: var(--hover-color);
 $link-hover-decoration: none;
+$breadcrumb-active-color: #a08954;
 
 $theme-colors: (
   primary: #a08954,
@@ -20,6 +21,10 @@ $theme-colors: (
 @import "./node_modules/bootstrap/scss/bootstrap.scss";
 @import "./register.scss";
 @import "./searchProducts.scss";
+@import "./cart.scss";
+@import "./product.scss";
+@import "./order.scss";
+@import "./summary.scss";
 
 .navbar-nav {
   margin-right: auto;
@@ -71,11 +76,13 @@ h3 {
 }
 .card {
   background: var(--back-color);
-  text-align: center;
   border: none;
+  height: 100%;
+  padding: 1rem;
+  border-radius: 10px;
 }
 .card:hover {
-  border: 1px solid #494d55;
+  box-shadow:0 30px 60px 20px rgba(0, 0, 0, 0.3);
 }
 .logo {
   color: var(--text-color);
@@ -84,6 +91,9 @@ h3 {
   padding: 0.6rem 2rem;
   background: var(--navbar-color);
   z-index: 99;
+}
+.nav-item>.dropdown-menu{
+  min-width: 100%;
 }
 .searchBar {
   --size: 40px;
@@ -109,10 +119,11 @@ h3 {
     left: 0;
     opacity: 0;
     cursor: pointer;
+    width: 93%!important;
   }
 
   &:focus-within {
-    width: 30%;
+    width: 35%;
     @media screen and(max-width: 770px) {
       width: 100%;
     }
@@ -133,16 +144,6 @@ h3 {
   }
   &-Btn:focus {
     outline: 0;
-  }
-}
-.dropdown-item {
-  img {
-    display: none;
-  }
-}
-.dropdown-item:hover {
-  img {
-    display: inline-flex;
   }
 }
 .comeToTop {
@@ -168,6 +169,11 @@ h3 {
   background-color: #8f939c;
 }
 
+.nav-link>.badge{
+  position: absolute;
+  left: 38px; 
+  bottom: -7px;
+}
 // Deleting outline effect
 input.active.focus,
 input.active:focus,
